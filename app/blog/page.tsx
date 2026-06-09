@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Clock, User, Calendar } from "lucide-react";
-import { client } from "@/sanity/lib/client";
+import { client, isSanityConfigured } from "@/sanity/lib/client";
 import { blogsQuery } from "@/sanity/lib/queries";
 import { urlFor } from "@/sanity/lib/image";
 import type { Blog } from "@/sanity/lib/types";
@@ -266,10 +266,12 @@ function StaticBlogGrid() {
 
 export default async function BlogPage() {
   let posts: Blog[] = [];
-  try {
-    posts = await client.fetch<Blog[]>(blogsQuery);
-  } catch {
-    posts = [];
+  if (isSanityConfigured) {
+    try {
+      posts = await client.fetch<Blog[]>(blogsQuery);
+    } catch {
+      posts = [];
+    }
   }
 
   return (

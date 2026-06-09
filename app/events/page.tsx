@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { client } from "@/sanity/lib/client";
+import { client, isSanityConfigured } from "@/sanity/lib/client";
 import { eventsQuery } from "@/sanity/lib/queries";
 import { urlFor } from "@/sanity/lib/image";
 import type { EventDoc } from "@/sanity/lib/types";
@@ -28,10 +28,12 @@ const statusColors: Record<string, string> = {
 
 export default async function EventsPage() {
   let events: EventDoc[] = [];
-  try {
-    events = await client.fetch<EventDoc[]>(eventsQuery);
-  } catch {
-    events = [];
+  if (isSanityConfigured) {
+    try {
+      events = await client.fetch<EventDoc[]>(eventsQuery);
+    } catch {
+      events = [];
+    }
   }
 
   const upcoming = events.filter((e) => e.status === "upcoming");

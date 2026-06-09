@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { client } from "@/sanity/lib/client";
+import { client, isSanityConfigured } from "@/sanity/lib/client";
 import { eventBySlugQuery } from "@/sanity/lib/queries";
 import { urlFor } from "@/sanity/lib/image";
 import type { EventDoc } from "@/sanity/lib/types";
@@ -15,6 +15,7 @@ interface Props {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  if (!isSanityConfigured) return {};
   const { slug } = await params;
   let event: EventDoc | null = null;
   try {
@@ -46,6 +47,7 @@ const statusColors: Record<string, string> = {
 };
 
 export default async function EventDetailPage({ params }: Props) {
+  if (!isSanityConfigured) notFound();
   const { slug } = await params;
   let event: EventDoc | null = null;
   try {

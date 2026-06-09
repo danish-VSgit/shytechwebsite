@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { client } from "@/sanity/lib/client";
+import { client, isSanityConfigured } from "@/sanity/lib/client";
 import { videoBySlugQuery } from "@/sanity/lib/queries";
 import { urlFor } from "@/sanity/lib/image";
 import type { Video } from "@/sanity/lib/types";
@@ -15,6 +15,7 @@ interface Props {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  if (!isSanityConfigured) return {};
   const { slug } = await params;
   let video: Video | null = null;
   try {
@@ -42,6 +43,7 @@ function getEmbedUrl(url: string): string | null {
 }
 
 export default async function VideoDetailPage({ params }: Props) {
+  if (!isSanityConfigured) notFound();
   const { slug } = await params;
   let video: Video | null = null;
   try {

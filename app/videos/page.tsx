@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { client } from "@/sanity/lib/client";
+import { client, isSanityConfigured } from "@/sanity/lib/client";
 import { videosQuery } from "@/sanity/lib/queries";
 import { urlFor } from "@/sanity/lib/image";
 import type { Video } from "@/sanity/lib/types";
@@ -86,10 +86,12 @@ function VideoCard({ video }: { video: Video }) {
 
 export default async function VideosPage() {
   let videos: Video[] = [];
-  try {
-    videos = await client.fetch<Video[]>(videosQuery);
-  } catch {
-    videos = [];
+  if (isSanityConfigured) {
+    try {
+      videos = await client.fetch<Video[]>(videosQuery);
+    } catch {
+      videos = [];
+    }
   }
 
   const showreels = videos.filter((v) => v.category === "showreel");

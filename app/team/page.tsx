@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { client } from "@/sanity/lib/client";
+import { client, isSanityConfigured } from "@/sanity/lib/client";
 import { teamQuery } from "@/sanity/lib/queries";
 import { urlFor } from "@/sanity/lib/image";
 import type { TeamMember } from "@/sanity/lib/types";
@@ -16,10 +16,12 @@ export const metadata: Metadata = {
 
 export default async function TeamPage() {
   let team: TeamMember[] = [];
-  try {
-    team = await client.fetch<TeamMember[]>(teamQuery);
-  } catch {
-    team = [];
+  if (isSanityConfigured) {
+    try {
+      team = await client.fetch<TeamMember[]>(teamQuery);
+    } catch {
+      team = [];
+    }
   }
 
   const byDept = team.reduce<Record<string, TeamMember[]>>((acc, member) => {

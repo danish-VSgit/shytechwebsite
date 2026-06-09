@@ -10,7 +10,7 @@ import PricingSection from "@/components/home/PricingSection";
 import GallerySection from "@/components/home/GallerySection";
 import FAQSection from "@/components/home/FAQSection";
 import ContactSection from "@/components/home/ContactSection";
-import { client } from "@/sanity/lib/client";
+import { client, isSanityConfigured } from "@/sanity/lib/client";
 import {
   featuredGuestsQuery,
   featuredTestimonialsQuery,
@@ -36,6 +36,7 @@ export const metadata: Metadata = {
 };
 
 async function fetchSanityData() {
+  if (!isSanityConfigured) return {};
   try {
     const [guests, testimonials, portfolio, services, gallery] = await Promise.allSettled([
       client.fetch<Guest[]>(featuredGuestsQuery),

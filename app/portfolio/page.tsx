@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { client } from "@/sanity/lib/client";
+import { client, isSanityConfigured } from "@/sanity/lib/client";
 import { portfolioQuery } from "@/sanity/lib/queries";
 import { adaptPortfolio } from "@/sanity/lib/adapters";
 import { portfolioItems as hardcodedPortfolio } from "@/lib/data/portfolio";
@@ -19,13 +19,15 @@ export const metadata: Metadata = {
 
 export default async function PortfolioPage() {
   let items: PortfolioItem[] = hardcodedPortfolio;
-  try {
-    const sanityProjects = await client.fetch<Portfolio[]>(portfolioQuery);
-    if (sanityProjects?.length) {
-      items = sanityProjects.map(adaptPortfolio);
+  if (isSanityConfigured) {
+    try {
+      const sanityProjects = await client.fetch<Portfolio[]>(portfolioQuery);
+      if (sanityProjects?.length) {
+        items = sanityProjects.map(adaptPortfolio);
+      }
+    } catch {
+      // fallback to hardcoded data
     }
-  } catch {
-    // fallback to hardcoded data
   }
 
   return (

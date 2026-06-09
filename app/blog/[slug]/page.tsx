@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { PortableText } from "@portabletext/react";
-import { client } from "@/sanity/lib/client";
+import { client, isSanityConfigured } from "@/sanity/lib/client";
 import { blogBySlugQuery } from "@/sanity/lib/queries";
 import { urlFor } from "@/sanity/lib/image";
 import type { Blog } from "@/sanity/lib/types";
@@ -16,6 +16,7 @@ interface Props {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  if (!isSanityConfigured) return {};
   const { slug } = await params;
   let post: Blog | null = null;
   try {
@@ -121,6 +122,7 @@ const portableTextComponents = {
 };
 
 export default async function BlogPostPage({ params }: Props) {
+  if (!isSanityConfigured) notFound();
   const { slug } = await params;
   let post: Blog | null = null;
   try {
