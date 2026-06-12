@@ -71,8 +71,16 @@ async function fetchSanityData() {
 export default async function HomePage() {
   const { guests, testimonials, portfolio, serviceCategories, gallery } = await fetchSanityData();
 
+  // TEMP DEBUG — remove after verifying Sanity guest data flow
+  console.log("Guests from Sanity:", guests);
+  console.log("isSanityConfigured:", isSanityConfigured);
+
   return (
     <>
+      {/* TEMP DEBUG — remove after verifying Sanity guest data flow */}
+      <div style={{ background: "#111", color: "#0f0", padding: "8px 16px", fontFamily: "monospace", fontSize: "12px" }}>
+        DEBUG: isSanityConfigured={String(isSanityConfigured)} | guests from Sanity: {guests ? guests.length : "undefined (using hardcoded fallback)"}
+      </div>
       <HeroSection />
       <ServicesSection serviceCategories={serviceCategories} />
       <GuestsSection guests={guests} />
