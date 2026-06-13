@@ -55,9 +55,22 @@ export const guest = defineType({
     }),
     defineField({
       name: "bio",
-      title: "Biography",
+      title: "Short Bio",
       type: "text",
       rows: 4,
+      description: "Brief summary shown on guest cards and the About section of the profile",
+    }),
+    defineField({
+      name: "fullBiography",
+      title: "Full Biography",
+      type: "array",
+      of: [{ type: "block" }],
+      description: "Detailed, rich-text biography shown on the guest's profile page",
+    }),
+    defineField({
+      name: "experienceYears",
+      title: "Years of Experience",
+      type: "number",
     }),
     defineField({
       name: "achievements",
@@ -67,11 +80,56 @@ export const guest = defineType({
       description: "List notable achievements, e.g. 'Forbes 30 Under 30'",
     }),
     defineField({
+      name: "awards",
+      title: "Awards & Recognitions",
+      type: "array",
+      of: [{ type: "string" }],
+      description: "List awards, recognitions and honours",
+    }),
+    defineField({
       name: "pastEvents",
       title: "Past Events",
       type: "array",
       of: [{ type: "string" }],
       description: "Events this guest has spoken at or attended",
+    }),
+    defineField({
+      name: "eventAppearances",
+      title: "Event Appearances",
+      type: "array",
+      of: [
+        {
+          type: "object",
+          fields: [
+            defineField({ name: "eventName", title: "Event Name", type: "string", validation: (Rule) => Rule.required() }),
+            defineField({ name: "role", title: "Role", type: "string", description: "e.g. Keynote Speaker, Chief Guest" }),
+            defineField({ name: "date", title: "Appearance Date", type: "date" }),
+          ],
+          preview: {
+            select: { title: "eventName", subtitle: "role" },
+          },
+        },
+      ],
+      description: "Structured record of speaking sessions and appearance dates",
+    }),
+    defineField({
+      name: "galleryImages",
+      title: "Media Gallery",
+      type: "array",
+      of: [{ type: "image", options: { hotspot: true } }],
+      description: "Event photos and gallery images for this guest's profile",
+    }),
+    defineField({
+      name: "featuredVideo",
+      title: "Featured Video URL",
+      type: "url",
+      description: "YouTube or Vimeo link — primary highlight video",
+    }),
+    defineField({
+      name: "interviewVideo",
+      title: "Interview Video URL",
+      type: "url",
+      description: "YouTube or Vimeo link — interview video",
     }),
     defineField({
       name: "verified",
@@ -88,6 +146,7 @@ export const guest = defineType({
         defineField({ name: "youtube", title: "YouTube URL", type: "url" }),
         defineField({ name: "twitter", title: "Twitter / X URL", type: "url" }),
         defineField({ name: "linkedin", title: "LinkedIn URL", type: "url" }),
+        defineField({ name: "facebook", title: "Facebook URL", type: "url" }),
         defineField({ name: "website", title: "Website URL", type: "url" }),
       ],
     }),
@@ -99,13 +158,15 @@ export const guest = defineType({
     }),
     defineField({
       name: "featured",
-      title: "Featured on Homepage",
+      title: "Featured Guest",
       type: "boolean",
       initialValue: false,
+      description: "Featured guests appear first on the homepage and receive a special highlight",
     }),
     ...seoFields,
   ],
   orderings: [
+    { title: "Featured First", name: "featuredFirst", by: [{ field: "featured", direction: "desc" }, { field: "order", direction: "asc" }] },
     { title: "Display Order", name: "orderAsc", by: [{ field: "order", direction: "asc" }] },
     { title: "Name A→Z", name: "nameAsc", by: [{ field: "name", direction: "asc" }] },
   ],

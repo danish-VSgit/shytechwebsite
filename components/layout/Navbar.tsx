@@ -32,7 +32,6 @@ const navLinks = [
     href: "/about",
     children: [
       { label: "About Us", href: "/about" },
-      { label: "Our Team", href: "/team" },
       { label: "Careers", href: "/careers" },
     ],
   },

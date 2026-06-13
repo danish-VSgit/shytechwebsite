@@ -7,7 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import {
   BadgeCheck, Globe,
   PlayCircle, ArrowRight, Calendar, Star, ChevronRight,
-  Users, X,
+  Users, X, Sparkles,
 } from "lucide-react";
 
 const IconInstagram = () => (
@@ -34,71 +34,87 @@ interface Props {
 function GuestCard({
   guest,
   isActive,
-  onClick,
 }: {
   guest: Guest;
   isActive: boolean;
-  onClick: () => void;
 }) {
   return (
-    <motion.div
-      whileHover={{ scale: 1.04, y: -6 }}
-      whileTap={{ scale: 0.98 }}
-      transition={{ type: "spring", stiffness: 380, damping: 22 }}
-      onClick={onClick}
-      className={`relative flex-shrink-0 w-[200px] cursor-pointer rounded-[24px] overflow-hidden bg-white transition-all duration-300 ${
-        isActive
-          ? "border-2 border-[#2563EB] shadow-[0_12px_40px_rgba(37,99,235,0.22)]"
-          : "border border-[#E2E8F0] shadow-[0_4px_20px_rgba(15,23,42,0.07)] hover:border-[#2563EB]/35 hover:shadow-[0_16px_48px_rgba(15,23,42,0.13)]"
-      }`}
-    >
-      {/* Photo */}
-      <div className="relative h-[220px] overflow-hidden bg-[#f1f5f9]">
-        <Image
-          src={guest.image}
-          alt={guest.name}
-          fill
-          className="object-cover transition-transform duration-700 group-hover:scale-105"
-          sizes="200px"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a]/65 via-[#0f172a]/10 to-transparent" />
+    <Link href={`/guests/${guest.slug}`} className="group flex-shrink-0 w-[200px]">
+      <motion.div
+        whileHover={{ scale: 1.04, y: -6 }}
+        whileTap={{ scale: 0.98 }}
+        transition={{ type: "spring", stiffness: 380, damping: 22 }}
+        className={`relative cursor-pointer rounded-[24px] overflow-hidden bg-white transition-all duration-300 ${
+          guest.featured
+            ? "border-2 border-transparent bg-gradient-to-b from-[#2563EB] to-[#06B6D4] shadow-[0_12px_40px_rgba(37,99,235,0.25)] p-[2px]"
+            : isActive
+            ? "border-2 border-[#2563EB] shadow-[0_12px_40px_rgba(37,99,235,0.22)]"
+            : "border border-[#E2E8F0] shadow-[0_4px_20px_rgba(15,23,42,0.07)] hover:border-[#2563EB]/35 hover:shadow-[0_16px_48px_rgba(15,23,42,0.13)]"
+        }`}
+      >
+        <div className={guest.featured ? "rounded-[22px] overflow-hidden bg-white" : ""}>
+          {/* Photo */}
+          <div className="relative h-[220px] overflow-hidden bg-[#f1f5f9]">
+            <Image
+              src={guest.image}
+              alt={guest.name}
+              fill
+              className="object-cover transition-transform duration-700 group-hover:scale-110"
+              sizes="200px"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a]/65 via-[#0f172a]/10 to-transparent" />
 
-        {/* Category chip */}
-        <div className="absolute top-3 left-3">
-          <span className="text-[9px] font-semibold tracking-widest uppercase px-2 py-1 rounded-full bg-white/90 backdrop-blur-sm text-[#2563EB]">
-            {guest.category}
-          </span>
-        </div>
+            {/* Category chip */}
+            <div className="absolute top-3 left-3">
+              <span className="text-[9px] font-semibold tracking-widest uppercase px-2 py-1 rounded-full bg-white/90 backdrop-blur-sm text-[#2563EB]">
+                {guest.category}
+              </span>
+            </div>
 
-        {/* Verified badge */}
-        {guest.verified && (
-          <div className="absolute top-3 right-3 w-6 h-6 rounded-full bg-[#2563EB] flex items-center justify-center shadow-md">
-            <BadgeCheck className="w-3.5 h-3.5 text-white" />
-          </div>
-        )}
+            {/* Featured badge */}
+            {guest.featured && (
+              <div className="absolute top-3 right-3 flex items-center gap-1 px-2 py-1 rounded-full bg-gradient-to-r from-[#2563EB] to-[#06B6D4] shadow-md">
+                <Sparkles className="w-3 h-3 text-white" />
+                <span className="text-[9px] font-bold tracking-widest uppercase text-white">Featured</span>
+              </div>
+            )}
 
-        {/* Active glow ring */}
-        {isActive && (
-          <div className="absolute inset-0 ring-2 ring-inset ring-[#2563EB]/40 rounded-[24px]" />
-        )}
-      </div>
+            {/* Verified badge */}
+            {guest.verified && !guest.featured && (
+              <div className="absolute top-3 right-3 w-6 h-6 rounded-full bg-[#2563EB] flex items-center justify-center shadow-md">
+                <BadgeCheck className="w-3.5 h-3.5 text-white" />
+              </div>
+            )}
 
-      {/* Info */}
-      <div className="px-4 py-3.5 bg-white">
-        <div className="flex items-start justify-between gap-1">
-          <div className="min-w-0">
-            <h3 className="text-sm font-bold text-[#0f172a] leading-tight truncate" style={{ fontFamily: "var(--font-plus-jakarta)" }}>
-              {guest.name}
-            </h3>
-            <p className="text-[11px] text-[#64748b] mt-0.5 truncate leading-snug">{guest.title}</p>
-            {guest.company && (
-              <p className="text-[11px] text-[#2563EB] font-semibold mt-0.5 truncate">{guest.company}</p>
+            {/* Active glow ring */}
+            {isActive && (
+              <div className="absolute inset-0 ring-2 ring-inset ring-[#2563EB]/40 rounded-[24px]" />
             )}
           </div>
-          <ChevronRight className="w-3.5 h-3.5 text-[#94a3b8] shrink-0 mt-0.5" />
+
+          {/* Info */}
+          <div className="px-4 py-3.5 bg-white">
+            <div className="flex items-start justify-between gap-1">
+              <div className="min-w-0">
+                <div className="flex items-center gap-1.5">
+                  <h3 className="text-sm font-bold text-[#0f172a] leading-tight truncate" style={{ fontFamily: "var(--font-plus-jakarta)" }}>
+                    {guest.name}
+                  </h3>
+                  {guest.verified && (
+                    <BadgeCheck className="w-3.5 h-3.5 text-[#2563EB] shrink-0" />
+                  )}
+                </div>
+                <p className="text-[11px] text-[#64748b] mt-0.5 truncate leading-snug">{guest.title}</p>
+                {guest.company && (
+                  <p className="text-[11px] text-[#2563EB] font-semibold mt-0.5 truncate tracking-wide">{guest.company}</p>
+                )}
+              </div>
+              <ChevronRight className="w-3.5 h-3.5 text-[#94a3b8] shrink-0 mt-0.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:text-[#2563EB]" />
+            </div>
+          </div>
         </div>
-      </div>
-    </motion.div>
+      </motion.div>
+    </Link>
   );
 }
 
@@ -318,10 +334,15 @@ function GuestProfileCard({
           </div>
 
           {/* CTA */}
-          <Link href="/contact" className="btn-primary text-sm inline-flex items-center gap-2 w-fit">
-            Invite Similar Guests
-            <ArrowRight className="w-4 h-4" />
-          </Link>
+          <div className="flex flex-wrap items-center gap-3">
+            <Link href={`/guests/${guest.slug}`} className="btn-primary text-sm inline-flex items-center gap-2 w-fit">
+              View Full Profile
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+            <Link href="/contact" className="btn-secondary text-sm inline-flex items-center gap-2 w-fit">
+              Invite Similar Guests
+            </Link>
+          </div>
         </div>
       </div>
     </motion.div>
@@ -410,14 +431,14 @@ export default function GuestsSection({ guests = hardcodedGuests }: Props) {
   }, []);
 
   return (
-    <section className="py-20 md:py-28 bg-white overflow-x-hidden">
+    <section id="guests" className="py-20 md:py-28 bg-white overflow-x-hidden">
       {/* ── Section header ── */}
       <div className="container-width">
         <SectionHeader
           badge="Featured Guests & Speakers"
-          title="Distinguished"
+          title="Featured"
           titleHighlight="Personalities"
-          subtitle="Meet the industry experts, entrepreneurs, influencers, and special guests who have been part of our landmark events."
+          subtitle="Meet the industry leaders, founders, journalists, creators, speakers and influential voices who have been part of SHYTECH events and productions."
         />
       </div>
 
@@ -426,7 +447,7 @@ export default function GuestsSection({ guests = hardcodedGuests }: Props) {
         className="relative mt-2 mb-20"
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
-        aria-label="Guest carousel — click a card to view full profile"
+        aria-label="Guest carousel — click a card to view full profile page"
       >
         {/* Gradient fade — left */}
         <div className="absolute left-0 top-0 bottom-0 w-28 md:w-40 bg-gradient-to-r from-white via-white/80 to-transparent z-10 pointer-events-none" />
@@ -449,7 +470,6 @@ export default function GuestsSection({ guests = hardcodedGuests }: Props) {
               key={`${guest.id}-${i}`}
               guest={guest}
               isActive={activeId === guest.id}
-              onClick={() => scrollToProfile(guest.id)}
             />
           ))}
         </div>
@@ -457,7 +477,7 @@ export default function GuestsSection({ guests = hardcodedGuests }: Props) {
         {/* Hint label */}
         <p className="text-center text-xs text-[#94a3b8] mt-3 flex items-center justify-center gap-1.5">
           <Users className="w-3.5 h-3.5" />
-          Click any card to view full profile below
+          Click any card to view their full profile
         </p>
       </div>
 

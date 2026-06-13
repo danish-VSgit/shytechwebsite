@@ -3,12 +3,8 @@ import HeroSection from "@/components/home/HeroSection";
 import ServicesSection from "@/components/home/ServicesSection";
 import GuestsSection from "@/components/home/GuestsSection";
 import PortfolioSection from "@/components/home/PortfolioSection";
-import WhyChooseUs from "@/components/home/WhyChooseUs";
-import ProcessSection from "@/components/home/ProcessSection";
 import TestimonialsSection from "@/components/home/TestimonialsSection";
-import PricingSection from "@/components/home/PricingSection";
 import GallerySection from "@/components/home/GallerySection";
-import FAQSection from "@/components/home/FAQSection";
 import ContactSection from "@/components/home/ContactSection";
 import { client } from "@/sanity/lib/client";
 import {
@@ -72,12 +68,8 @@ export default async function HomePage() {
       <ServicesSection serviceCategories={serviceCategories} />
       <GuestsSection guests={guests} />
       <PortfolioSection portfolioItems={portfolio} />
-      <WhyChooseUs />
-      <ProcessSection />
       <TestimonialsSection testimonials={testimonials} />
-      <PricingSection />
       <GallerySection images={gallery} />
-      <FAQSection />
       <ContactSection />
     </>
   );

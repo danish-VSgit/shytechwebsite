@@ -20,7 +20,7 @@ const imageFragment = groq`{
 // ── Guests ─────────────────────────────────────────────────────────────────────
 
 export const guestsQuery = groq`
-  *[_type == "guest"] | order(order asc, name asc) {
+  *[_type == "guest"] | order(featured desc, order asc, name asc) {
     _id, name, slug, title, company, category, photo ${imageFragment},
     bio, achievements, pastEvents, verified, socialLinks, order, featured
   }
@@ -29,14 +29,21 @@ export const guestsQuery = groq`
 export const featuredGuestsQuery = groq`
   *[_type == "guest" && featured == true] | order(order asc) [0...8] {
     _id, name, slug, title, company, category, photo ${imageFragment},
-    bio, achievements, pastEvents, verified, socialLinks
+    bio, achievements, pastEvents, verified, socialLinks, featured
   }
+`;
+
+export const guestSlugsQuery = groq`
+  *[_type == "guest" && defined(slug.current)][].slug.current
 `;
 
 export const guestBySlugQuery = groq`
   *[_type == "guest" && slug.current == $slug][0] {
     _id, name, slug, title, company, category, photo ${imageFragment},
-    bio, achievements, pastEvents, verified, socialLinks, ${seoFragment}
+    bio, fullBiography, experienceYears, achievements, awards,
+    pastEvents, eventAppearances, galleryImages[] ${imageFragment},
+    featuredVideo, interviewVideo, verified, socialLinks, featured,
+    ${seoFragment}
   }
 `;
 

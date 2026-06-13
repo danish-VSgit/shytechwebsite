@@ -9,11 +9,13 @@ export interface GuestSocialLinks {
   linkedin?: string;
   twitter?: string;
   youtube?: string;
+  facebook?: string;
   website?: string;
 }
 
 export interface Guest {
   id: string;
+  slug: string;
   name: string;
   title: string;
   company?: string;
@@ -24,11 +26,13 @@ export interface Guest {
   pastEvents: GuestPastEvent[];
   verified: boolean;
   category: string;
+  featured?: boolean;
 }
 
 export const guests: Guest[] = [
   {
     id: "sandeep-maheshwari",
+    slug: "sandeep-maheshwari",
     name: "Sandeep Maheshwari",
     title: "Motivational Speaker & Entrepreneur",
     company: "ImagesBazaar",
@@ -54,6 +58,7 @@ export const guests: Guest[] = [
   },
   {
     id: "aman-gupta",
+    slug: "aman-gupta",
     name: "Aman Gupta",
     title: "Co-Founder & CMO",
     company: "boAt Lifestyle",
@@ -79,6 +84,7 @@ export const guests: Guest[] = [
   },
   {
     id: "priyanka-chopra",
+    slug: "priyanka-chopra",
     name: "Priyanka Chopra Jonas",
     title: "Actress, Producer & Entrepreneur",
     company: "Purple Pebble Pictures",
@@ -104,6 +110,7 @@ export const guests: Guest[] = [
   },
   {
     id: "ritesh-agarwal",
+    slug: "ritesh-agarwal",
     name: "Ritesh Agarwal",
     title: "Founder & CEO",
     company: "OYO Rooms",
@@ -129,6 +136,7 @@ export const guests: Guest[] = [
   },
   {
     id: "anupam-mittal",
+    slug: "anupam-mittal",
     name: "Anupam Mittal",
     title: "Founder & CEO",
     company: "Shaadi.com & People Group",
@@ -154,6 +162,7 @@ export const guests: Guest[] = [
   },
   {
     id: "kiran-mazumdar-shaw",
+    slug: "kiran-mazumdar-shaw",
     name: "Kiran Mazumdar-Shaw",
     title: "Executive Chairperson",
     company: "Biocon Limited",
@@ -179,6 +188,7 @@ export const guests: Guest[] = [
   },
   {
     id: "kunal-shah",
+    slug: "kunal-shah",
     name: "Kunal Shah",
     title: "Founder & CEO",
     company: "CRED",
@@ -204,6 +214,7 @@ export const guests: Guest[] = [
   },
   {
     id: "deepika-padukone",
+    slug: "deepika-padukone",
     name: "Deepika Padukone",
     title: "Actress & Mental Health Advocate",
     company: "KA Enterprises",
@@ -229,6 +240,7 @@ export const guests: Guest[] = [
   },
   {
     id: "virat-kohli",
+    slug: "virat-kohli",
     name: "Virat Kohli",
     title: "Professional Cricketer & Entrepreneur",
     company: "One8 Commune",

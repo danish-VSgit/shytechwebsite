@@ -21,7 +21,14 @@ export interface SocialLinks {
   youtube?: string;
   twitter?: string;
   linkedin?: string;
+  facebook?: string;
   website?: string;
+}
+
+export interface GuestEventAppearance {
+  eventName: string;
+  role?: string;
+  date?: string;
 }
 
 export interface Guest {
@@ -34,8 +41,15 @@ export interface Guest {
   category?: string;
   photo?: SanityImage;
   bio?: string;
+  fullBiography?: PortableTextBlock[];
+  experienceYears?: number;
   achievements?: string[];
+  awards?: string[];
   pastEvents?: string[];
+  eventAppearances?: GuestEventAppearance[];
+  galleryImages?: SanityImage[];
+  featuredVideo?: string;
+  interviewVideo?: string;
   verified?: boolean;
   socialLinks?: SocialLinks;
   order?: number;
