@@ -11,6 +11,8 @@ const apiVersion = process.env.NEXT_PUBLIC_SANITY_API_VERSION || "2024-01-01";
 
 console.log("PROJECT ID =", projectId);
 console.log("DATASET =", dataset);
+console.log("ENV PROJECT ID:", process.env.NEXT_PUBLIC_SANITY_PROJECT_ID);
+console.log("ENV DATASET:", process.env.NEXT_PUBLIC_SANITY_DATASET);
 
 export const client = createClient({
   projectId,
