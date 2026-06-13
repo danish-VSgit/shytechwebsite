@@ -10,7 +10,7 @@ import PricingSection from "@/components/home/PricingSection";
 import GallerySection from "@/components/home/GallerySection";
 import FAQSection from "@/components/home/FAQSection";
 import ContactSection from "@/components/home/ContactSection";
-import { client, isSanityConfigured } from "@/sanity/lib/client";
+import { client } from "@/sanity/lib/client";
 import {
   featuredGuestsQuery,
   featuredTestimonialsQuery,
@@ -44,35 +44,10 @@ async function fetchSanityData() {
     client.fetch<GalleryImage[]>(featuredGalleryQuery),
   ]);
 
-  // TEMP DEBUG — remove after verifying Sanity guest data flow
-  console.log("Sanity client config:", client.config());
-  console.log("Sanity guest query:", featuredGuestsQuery);
-  if (guests.status === "fulfilled") {
-    console.log("Raw guest response:", guests.value);
-    console.log("Guest count:", guests.value?.length);
-  } else {
-    console.error("Guest query rejected:", guests.reason);
-  }
-
-  let guestAdaptError: unknown = null;
-  let adaptedGuests: ReturnType<typeof adaptGuest>[] | undefined;
-  if (guests.status === "fulfilled" && guests.value?.length) {
-    try {
-      adaptedGuests = guests.value.map(adaptGuest);
-    } catch (err) {
-      guestAdaptError = err;
-      console.error("adaptGuest threw:", err);
-    }
-  }
-
   return {
-    guests: adaptedGuests,
-    guestDebug: {
-      status: guests.status,
-      reason: guests.status === "rejected" ? String(guests.reason) : null,
-      rawCount: guests.status === "fulfilled" ? guests.value?.length ?? 0 : null,
-      adaptError: guestAdaptError ? String(guestAdaptError) : null,
-    },
+    guests: guests.status === "fulfilled" && guests.value?.length
+      ? guests.value.map(adaptGuest)
+      : undefined,
     testimonials: testimonials.status === "fulfilled" && testimonials.value?.length
       ? testimonials.value.map(adaptTestimonial)
       : undefined,
@@ -89,22 +64,10 @@ async function fetchSanityData() {
 }
 
 export default async function HomePage() {
-  const { guests, guestDebug, testimonials, portfolio, serviceCategories, gallery } = await fetchSanityData();
-
-  // TEMP DEBUG — remove after verifying Sanity guest data flow
-  console.log("Guests from Sanity (adapted):", guests);
-  console.log("isSanityConfigured:", isSanityConfigured);
-  console.log("Guest debug:", guestDebug);
+  const { guests, testimonials, portfolio, serviceCategories, gallery } = await fetchSanityData();
 
   return (
     <>
-      {/* TEMP DEBUG — remove after verifying Sanity guest data flow */}
-      <div style={{ background: "#111", color: "#0f0", padding: "8px 16px", fontFamily: "monospace", fontSize: "12px", wordBreak: "break-all" }}>
-        DEBUG: projectId={client.config().projectId} dataset={client.config().dataset} useCdn={String(client.config().useCdn)} |
-        query status={guestDebug.status} | raw count={String(guestDebug.rawCount)} |
-        rejection={guestDebug.reason ?? "none"} | adaptError={guestDebug.adaptError ?? "none"} |
-        final guests={guests ? guests.length : "undefined (hardcoded fallback)"}
-      </div>
       <HeroSection />
       <ServicesSection serviceCategories={serviceCategories} />
       <GuestsSection guests={guests} />
