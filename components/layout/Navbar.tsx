@@ -28,7 +28,7 @@ const navLinks = [
       { label: "Videos", href: "/videos" },
     ],
   },
-  { label: "Blog", href: "/blog" },
+  // { label: "Blog", href: "/blog" }, // hidden for now
   { label: "Contact", href: "/contact" },
 ];
 
@@ -113,11 +113,11 @@ export default function Navbar() {
         {/* Desktop CTA */}
         <div className="hidden lg:flex items-center gap-3">
           <a
-            href="tel:+911234567890"
+            href="tel:+918595827471"
             className="flex items-center gap-2 text-sm text-[#475569] hover:text-[#2563EB] transition-colors"
           >
             <Phone className="w-4 h-4" />
-            <span>+91 12345 67890</span>
+            <span>+91 85958 27471</span>
           </a>
           <Link href="/contact" className="btn-secondary text-xs px-5 py-3">
             Request Proposal
@@ -175,11 +175,11 @@ export default function Navbar() {
               ))}
               <div className="pt-4 flex flex-col gap-3">
                 <a
-                  href="tel:+911234567890"
+                  href="tel:+918595827471"
                   className="flex items-center gap-2 px-4 py-3 text-sm text-[#475569]"
                 >
                   <Phone className="w-4 h-4 text-[#2563EB]" />
-                  <span>+91 12345 67890</span>
+                  <span>+91 85958 27471</span>
                 </a>
                 <Link
                   href="/contact"

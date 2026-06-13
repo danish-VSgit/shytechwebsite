@@ -7,21 +7,8 @@ export default function JsonLd() {
       "Premium event management and media production company creating experiences people never forget.",
     url: "https://shytech.agency",
     logo: "https://shytech.agency/logo.png",
-    telephone: "+911234567890",
-    email: "hello@shytech.agency",
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "123 Premium Tower, Business District",
-      addressLocality: "Mumbai",
-      addressRegion: "Maharashtra",
-      postalCode: "400001",
-      addressCountry: "IN",
-    },
-    geo: {
-      "@type": "GeoCoordinates",
-      latitude: 19.0760,
-      longitude: 72.8777,
-    },
+    telephone: "+918595827471",
+    email: "enquiry@queuecap.com",
     openingHoursSpecification: [
       {
         "@type": "OpeningHoursSpecification",
@@ -35,11 +22,6 @@ export default function JsonLd() {
         opens: "10:00",
         closes: "18:00",
       },
-    ],
-    sameAs: [
-      "https://instagram.com/shytech",
-      "https://youtube.com/@shytech",
-      "https://linkedin.com/company/shytech",
     ],
     priceRange: "₹₹₹",
     servesCuisine: undefined,

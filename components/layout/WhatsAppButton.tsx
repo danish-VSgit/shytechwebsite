@@ -31,7 +31,7 @@ export default function WhatsAppButton() {
               on WhatsApp for a quick response.
             </p>
             <a
-              href="https://wa.me/911234567890?text=Hi%20SHYTECH!%20I%27d%20like%20to%20discuss%20my%20event%20requirements."
+              href="https://wa.me/918595827471?text=Hi%20SHYTECH!%20I%27d%20like%20to%20discuss%20my%20event%20requirements."
               target="_blank"
               rel="noopener noreferrer"
               className="w-full btn-primary text-center flex items-center justify-center gap-2 text-xs"

@@ -443,7 +443,7 @@ export default async function GuestProfilePage({ params }: Props) {
           <p className="text-white/80 mb-6">Let&apos;s talk about bringing the right voices to your stage.</p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Link href="/contact" className="inline-flex items-center justify-center gap-2 bg-white text-[#2563EB] font-semibold px-6 py-3 rounded-xl hover:bg-[#f8fafc] transition-colors shadow-lg">
-              Invite Similar Guests
+              Invite Guest
               <ArrowRight className="w-4 h-4" />
             </Link>
             <Link href="/guests" className="inline-flex items-center justify-center gap-2 bg-white/10 border border-white/30 text-white font-medium px-6 py-3 rounded-xl hover:bg-white/20 transition-colors">

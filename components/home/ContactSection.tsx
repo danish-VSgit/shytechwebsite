@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Send, MessageCircle, Phone, Mail, MapPin, CheckCircle2 } from "lucide-react";
+import { Send, MessageCircle, Phone, Mail, CheckCircle2 } from "lucide-react";
 import SectionHeader from "@/components/shared/SectionHeader";
 import { allServices } from "@/lib/data/services";
 
@@ -67,25 +67,19 @@ export default function ContactSection() {
               <h3 className="text-base font-semibold text-[#0f172a] mb-4" style={{ fontFamily: "var(--font-plus-jakarta)" }}>
                 Get in Touch
               </h3>
-              <div className="space-y-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {[
                   {
                     icon: Phone,
                     label: "Call Us",
-                    value: "+91 12345 67890",
-                    href: "tel:+911234567890",
+                    value: "+91 85958 27471",
+                    href: "tel:+918595827471",
                   },
                   {
                     icon: Mail,
                     label: "Email Us",
-                    value: "hello@shytech.agency",
-                    href: "mailto:hello@shytech.agency",
-                  },
-                  {
-                    icon: MapPin,
-                    label: "Visit Us",
-                    value: "123 Premium Tower, Mumbai 400001",
-                    href: "#",
+                    value: "enquiry@queuecap.com",
+                    href: "mailto:enquiry@queuecap.com",
                   },
                 ].map(({ icon: Icon, label, value, href }) => (
                   <a
@@ -108,7 +102,7 @@ export default function ContactSection() {
             </div>
 
             <a
-              href="https://wa.me/911234567890?text=Hi%20SHYTECH!%20I%27d%20like%20to%20discuss%20my%20event."
+              href="https://wa.me/918595827471?text=Hi%20SHYTECH!%20I%27d%20like%20to%20discuss%20my%20event."
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-3 w-full py-4 rounded-2xl bg-[#25D366] text-white font-semibold text-sm hover:bg-[#20bd5c] transition-all shadow-[0_4px_20px_rgba(37,211,102,0.25)] hover:shadow-[0_6px_24px_rgba(37,211,102,0.35)] hover:-translate-y-0.5"
