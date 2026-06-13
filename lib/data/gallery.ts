@@ -19,8 +19,8 @@ export const galleryImages: GalleryImage[] = [
   {
     id: "2",
     src: "https://images.unsplash.com/photo-1519741497674-611481863552?w=600&q=80",
-    alt: "Elegant wedding ceremony",
-    category: "Wedding",
+    alt: "Corporate summit keynote stage",
+    category: "Corporate",
     width: 600,
     height: 800,
   },
@@ -43,8 +43,8 @@ export const galleryImages: GalleryImage[] = [
   {
     id: "5",
     src: "https://images.unsplash.com/photo-1606216794074-735e91aa2c92?w=600&q=80",
-    alt: "Wedding reception decoration",
-    category: "Wedding",
+    alt: "Brand activation event décor",
+    category: "Events",
     width: 600,
     height: 600,
   },
@@ -75,8 +75,8 @@ export const galleryImages: GalleryImage[] = [
   {
     id: "9",
     src: "https://images.unsplash.com/photo-1529543544282-ea669407fca3?w=600&q=80",
-    alt: "Luxury wedding flowers",
-    category: "Wedding",
+    alt: "Premium event floral and stage décor",
+    category: "Production",
     width: 600,
     height: 600,
   },

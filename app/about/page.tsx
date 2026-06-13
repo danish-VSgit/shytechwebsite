@@ -49,13 +49,13 @@ const team = [
     name: "Priya Verma",
     role: "Head of Event Management",
     image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&q=80",
-    bio: "Certified event planner with expertise in luxury weddings and high-profile corporate events for Fortune 500 companies.",
+    bio: "Certified event planner with expertise in large-scale conferences and high-profile corporate events for Fortune 500 companies.",
   },
   {
     name: "Karan Mehta",
     role: "Lead Cinematographer",
     image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&q=80",
-    bio: "Award-winning cinematographer with credits in documentary films, brand commercials, and destination wedding films.",
+    bio: "Award-winning cinematographer with credits in documentary films, brand commercials, and corporate brand films.",
   },
   {
     name: "Sneha Kapoor",

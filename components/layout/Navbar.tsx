@@ -18,8 +18,9 @@ const navLinks = [
       { label: "Brand & Digital", href: "/services#brand-digital" },
     ],
   },
+  { label: "Guests", href: "/guests" },
   {
-    label: "Work",
+    label: "Portfolio",
     href: "/portfolio",
     children: [
       { label: "Portfolio", href: "/portfolio" },
@@ -27,15 +28,6 @@ const navLinks = [
       { label: "Videos", href: "/videos" },
     ],
   },
-  {
-    label: "Company",
-    href: "/about",
-    children: [
-      { label: "About Us", href: "/about" },
-      { label: "Careers", href: "/careers" },
-    ],
-  },
-  { label: "Pricing", href: "/pricing" },
   { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },
 ];
@@ -127,8 +119,11 @@ export default function Navbar() {
             <Phone className="w-4 h-4" />
             <span>+91 12345 67890</span>
           </a>
+          <Link href="/contact" className="btn-secondary text-xs px-5 py-3">
+            Request Proposal
+          </Link>
           <Link href="/contact" className="btn-primary text-xs px-6 py-3">
-            Free Consultation
+            Get Free Consultation
           </Link>
         </div>
 
@@ -191,7 +186,14 @@ export default function Navbar() {
                   className="btn-primary text-center"
                   onClick={() => setIsMobileOpen(false)}
                 >
-                  Free Consultation
+                  Get Free Consultation
+                </Link>
+                <Link
+                  href="/contact"
+                  className="btn-secondary text-center"
+                  onClick={() => setIsMobileOpen(false)}
+                >
+                  Request Proposal
                 </Link>
               </div>
             </div>

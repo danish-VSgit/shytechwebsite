@@ -25,17 +25,17 @@ export const metadata: Metadata = {
     template: "%s | SHYTECH",
   },
   description:
-    "SHYTECH delivers world-class event management, corporate events, weddings, professional videography, AI video generation, and media production services. Creating experiences people never forget.",
+    "SHYTECH delivers world-class corporate event management, conferences, summits, professional videography, AI video generation, and media production services. Creating experiences people never forget.",
   keywords: [
-    "event management",
-    "wedding planning",
-    "corporate events",
-    "videography",
-    "photography",
-    "media production",
-    "AI video generation",
-    "live streaming",
-    "brand promotions",
+    "corporate event management",
+    "event production company",
+    "media production company",
+    "content production",
+    "conference management",
+    "summit production",
+    "corporate video production",
+    "brand experience agency",
+    "live event production",
     "SHYTECH",
   ],
   authors: [{ name: "SHYTECH" }],
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     siteName: "SHYTECH",
     title: "SHYTECH | Premium Event Management & Media Production",
     description:
-      "Creating experiences people never forget. From corporate events and weddings to professional videography and AI content production.",
+      "Creating experiences people never forget. From corporate events and conferences to professional videography and AI content production.",
     images: [
       {
         url: "/og-image.jpg",

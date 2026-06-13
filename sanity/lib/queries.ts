@@ -27,7 +27,7 @@ export const guestsQuery = groq`
 `;
 
 export const featuredGuestsQuery = groq`
-  *[_type == "guest" && featured == true] | order(order asc) [0...8] {
+  *[_type == "guest" && featured == true] | order(order asc) [0...12] {
     _id, name, slug, title, company, category, photo ${imageFragment},
     bio, achievements, pastEvents, verified, socialLinks, featured
   }

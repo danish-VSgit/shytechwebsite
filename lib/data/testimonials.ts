@@ -23,14 +23,14 @@ export const testimonials: Testimonial[] = [
   },
   {
     id: "2",
-    name: "Arjun & Kavya Sharma",
-    role: "Bride & Groom",
-    company: "Private Client",
+    name: "Arjun Sharma",
+    role: "Head of Events",
+    company: "Apex Leadership Group",
     image: "https://images.unsplash.com/photo-1522529599102-193c0d76b5b6?w=200&q=80",
     rating: 5,
     review:
-      "Our wedding film made us cry happy tears every single time we watch it. SHYTECH understood our vision better than we did. The cinematic storytelling, the drone shots, the editing — it felt like a Hollywood production. Worth every rupee and more.",
-    eventType: "Luxury Wedding",
+      "Our annual conference film made the entire leadership team proud every single time we watch it. SHYTECH understood our vision better than we did. The cinematic storytelling, the drone shots, the editing — it felt like a Hollywood production. Worth every rupee and more.",
+    eventType: "Annual Conference",
   },
   {
     id: "3",

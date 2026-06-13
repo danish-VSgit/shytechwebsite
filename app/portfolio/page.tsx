@@ -14,7 +14,7 @@ export const revalidate = 60;
 export const metadata: Metadata = {
   title: "Portfolio | SHYTECH",
   description:
-    "Explore SHYTECH's portfolio of luxury events, cinematic weddings, corporate productions, and brand campaigns.",
+    "Explore SHYTECH's portfolio of premium corporate events, conferences, summits, media productions, and brand campaigns.",
 };
 
 export default async function PortfolioPage() {

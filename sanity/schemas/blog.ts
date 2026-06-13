@@ -71,7 +71,7 @@ export const blog = defineType({
       options: {
         list: [
           { title: "Event Planning", value: "event-planning" },
-          { title: "Wedding Tips", value: "wedding-tips" },
+          { title: "Conferences & Summits", value: "conferences-summits" },
           { title: "Corporate Events", value: "corporate-events" },
           { title: "Videography", value: "videography" },
           { title: "Photography", value: "photography" },

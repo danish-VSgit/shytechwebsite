@@ -32,7 +32,7 @@ export const galleryImage = defineType({
       options: {
         list: [
           { title: "Corporate", value: "corporate" },
-          { title: "Wedding", value: "wedding" },
+          { title: "Brand Activation", value: "brand-activation" },
           { title: "Events", value: "events" },
           { title: "Production", value: "production" },
           { title: "Behind the Scenes", value: "bts" },

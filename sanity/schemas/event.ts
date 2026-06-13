@@ -43,7 +43,7 @@ export const event = defineType({
       options: {
         list: [
           { title: "Corporate", value: "corporate" },
-          { title: "Wedding", value: "wedding" },
+          { title: "Summit", value: "summit" },
           { title: "Conference", value: "conference" },
           { title: "Product Launch", value: "product-launch" },
           { title: "Brand Activation", value: "brand-activation" },

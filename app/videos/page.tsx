@@ -11,7 +11,7 @@ export const revalidate = 60;
 
 export const metadata: Metadata = {
   title: "Videos | SHYTECH",
-  description: "Watch our portfolio of event films, wedding videos, corporate productions, and AI-generated content.",
+  description: "Watch our portfolio of event films, conference highlights, corporate productions, and AI-generated content.",
 };
 
 function getEmbedUrl(url: string): string | null {
@@ -110,7 +110,7 @@ export default async function VideosPage() {
             Our <span className="accent-text">Videos</span>
           </h1>
           <p className="text-lg text-[#475569] max-w-2xl mx-auto">
-            From cinematic wedding films to AI-generated brand campaigns — watch what we create.
+            From cinematic conference films to AI-generated brand campaigns — watch what we create.
           </p>
         </div>
       </section>

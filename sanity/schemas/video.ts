@@ -67,7 +67,7 @@ export const video = defineType({
       options: {
         list: [
           { title: "Event Highlights", value: "event-highlights" },
-          { title: "Wedding Film", value: "wedding-film" },
+          { title: "Podcast", value: "podcast" },
           { title: "Corporate", value: "corporate" },
           { title: "Commercial", value: "commercial" },
           { title: "AI Generated", value: "ai-generated" },

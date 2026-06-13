@@ -81,9 +81,9 @@ export default function HeroSection() {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="mt-8 text-lg md:text-xl text-[#475569] max-w-2xl mx-auto leading-relaxed"
         >
-          From corporate events and weddings to professional videography and AI
-          content production, we manage everything under one roof with
-          uncompromising excellence.
+          From corporate events, conferences and summits to professional media
+          production and AI-powered content creation, we craft brand
+          experiences and leadership events with uncompromising excellence.
         </motion.p>
 
         <motion.div

@@ -12,7 +12,7 @@ export const revalidate = 60;
 export const metadata: Metadata = {
   title: "Blog | SHYTECH",
   description:
-    "Expert insights on event management, wedding planning, videography trends, AI in media production, and digital marketing from the SHYTECH team.",
+    "Expert insights on corporate event management, conference production, videography trends, AI in media production, and digital marketing from the SHYTECH team.",
 };
 
 // Static fallback posts shown before Sanity is populated
@@ -41,14 +41,14 @@ const staticPosts = [
   },
   {
     id: "3",
-    title: "The Complete Guide to Planning a Destination Wedding",
-    excerpt: "Destination weddings are magical — and complex. Our comprehensive guide covers venue selection, guest logistics, legal requirements, and media coverage.",
-    category: "Wedding Planning",
+    title: "The Complete Guide to Planning a Multi-Day Corporate Summit",
+    excerpt: "Multi-day summits are powerful — and complex. Our comprehensive guide covers venue selection, speaker logistics, technical production, and media coverage.",
+    category: "Conferences & Summits",
     author: "Priya Verma",
     readTime: "12 min read",
     date: "April 28, 2025",
     image: "https://images.unsplash.com/photo-1519741497674-611481863552?w=800&q=80",
-    slug: "destination-wedding-planning-guide",
+    slug: "corporate-summit-planning-guide-multi-day",
   },
   {
     id: "4",

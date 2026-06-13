@@ -7,7 +7,6 @@
 import type { PortableTextBlock } from "@portabletext/types";
 import { urlFor } from "./image";
 import type { Guest, GuestEventAppearance, Testimonial, Portfolio, Service, GalleryImage, SEO } from "./types";
-import type { Guest as ComponentGuest, GuestSocialLinks } from "@/lib/data/guests";
 import type { Testimonial as ComponentTestimonial } from "@/lib/data/testimonials";
 import type { PortfolioItem } from "@/lib/data/portfolio";
 import type { GalleryImage as ComponentGallery } from "@/lib/data/gallery";
@@ -20,6 +19,37 @@ type ServiceCategory = {
   icon: string;
   services: Array<{ title: string; description: string; icon: string }>;
 };
+
+export interface GuestSocialLinks {
+  instagram?: string;
+  linkedin?: string;
+  twitter?: string;
+  youtube?: string;
+  facebook?: string;
+  website?: string;
+}
+
+export interface GuestPastEvent {
+  eventName: string;
+  year: string;
+  role: string;
+}
+
+export interface ComponentGuest {
+  id: string;
+  slug: string;
+  name: string;
+  title: string;
+  company?: string;
+  image: string;
+  bio: string;
+  achievements: string[];
+  socialLinks: GuestSocialLinks;
+  pastEvents: GuestPastEvent[];
+  verified: boolean;
+  category: string;
+  featured?: boolean;
+}
 
 export interface GuestProfile {
   id: string;

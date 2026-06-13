@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import {
-  Calendar, Building2, Heart, Mic, Rocket,
+  Calendar, Building2, Trophy, Mic, Mic2, Rocket,
   Camera, Video, Radio, Film, Cpu, Share2, Zap,
   Mail, Crown, Star, Layers, Megaphone, BarChart2,
   Globe, FileText, Users, TrendingUp, ArrowRight,
@@ -24,7 +24,7 @@ interface Props {
 }
 
 const iconMap: Record<string, React.ElementType> = {
-  Calendar, Building2, Heart, Mic, Rocket, Camera, Video, Radio, Film,
+  Calendar, Building2, Trophy, Mic, Mic2, Rocket, Camera, Video, Radio, Film,
   Cpu, Share2, Zap, Mail, Crown, Star, Layers, Megaphone, BarChart2,
   Globe, FileText, Users, TrendingUp,
   Plane: Layers,

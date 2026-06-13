@@ -13,7 +13,6 @@ import { guestBySlugQuery, guestSlugsQuery } from "@/sanity/lib/queries";
 import { urlFor } from "@/sanity/lib/image";
 import { adaptGuestProfile, type GuestProfile } from "@/sanity/lib/adapters";
 import type { Guest as SanityGuest, GuestEventAppearance } from "@/sanity/lib/types";
-import { guests as hardcodedGuests } from "@/lib/data/guests";
 import PersonJsonLd from "@/components/shared/PersonJsonLd";
 
 export const revalidate = 60;
@@ -43,47 +42,24 @@ const IconFacebook = () => (
 async function getGuestProfile(slug: string): Promise<GuestProfile | null> {
   try {
     const sanityGuest = await client.fetch<SanityGuest | null>(guestBySlugQuery, { slug });
-    if (sanityGuest) {
-      const profile = adaptGuestProfile(sanityGuest);
-      if (profile.eventAppearances.length === 0 && profile.pastEvents.length > 0) {
-        profile.eventAppearances = profile.pastEvents.map((eventName) => ({ eventName }));
-      }
-      return profile;
+    if (!sanityGuest) return null;
+
+    const profile = adaptGuestProfile(sanityGuest);
+    if (profile.eventAppearances.length === 0 && profile.pastEvents.length > 0) {
+      profile.eventAppearances = profile.pastEvents.map((eventName) => ({ eventName }));
     }
+    return profile;
   } catch {
-    // fall through to hardcoded fallback
+    return null;
   }
-
-  const fallback = hardcodedGuests.find((g) => g.slug === slug);
-  if (!fallback) return null;
-
-  return {
-    id: fallback.id,
-    slug: fallback.slug,
-    name: fallback.name,
-    title: fallback.title,
-    company: fallback.company,
-    category: fallback.category,
-    image: fallback.image,
-    bio: fallback.bio,
-    achievements: fallback.achievements,
-    awards: [],
-    pastEvents: [],
-    eventAppearances: fallback.pastEvents.map((e) => ({ eventName: e.eventName, role: e.role, date: e.year })),
-    galleryImages: [],
-    verified: fallback.verified,
-    featured: fallback.featured ?? false,
-    socialLinks: fallback.socialLinks,
-  };
 }
 
 export async function generateStaticParams() {
-  const hardcodedSlugs = hardcodedGuests.map((g) => g.slug);
   try {
     const sanitySlugs = await client.fetch<string[]>(guestSlugsQuery);
-    return Array.from(new Set([...sanitySlugs, ...hardcodedSlugs])).map((slug) => ({ slug }));
+    return sanitySlugs.map((slug) => ({ slug }));
   } catch {
-    return hardcodedSlugs.map((slug) => ({ slug }));
+    return [];
   }
 }
 
@@ -177,9 +153,9 @@ export default async function GuestProfilePage({ params }: Props) {
 
       {/* Back nav */}
       <div className="pt-28 pb-6 container-width">
-        <Link href="/#guests" className="inline-flex items-center gap-2 text-sm text-[#64748b] hover:text-[#2563EB] transition-colors">
+        <Link href="/guests" className="inline-flex items-center gap-2 text-sm text-[#64748b] hover:text-[#2563EB] transition-colors">
           <ArrowLeft className="w-4 h-4" />
-          Back to Featured Personalities
+          Back to All Personalities
         </Link>
       </div>
 
@@ -470,7 +446,7 @@ export default async function GuestProfilePage({ params }: Props) {
               Invite Similar Guests
               <ArrowRight className="w-4 h-4" />
             </Link>
-            <Link href="/#guests" className="inline-flex items-center justify-center gap-2 bg-white/10 border border-white/30 text-white font-medium px-6 py-3 rounded-xl hover:bg-white/20 transition-colors">
+            <Link href="/guests" className="inline-flex items-center justify-center gap-2 bg-white/10 border border-white/30 text-white font-medium px-6 py-3 rounded-xl hover:bg-white/20 transition-colors">
               <ArrowLeft className="w-4 h-4" />
               More Personalities
             </Link>

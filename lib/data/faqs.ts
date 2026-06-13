@@ -10,14 +10,14 @@ export const faqs: FAQ[] = [
     id: "1",
     question: "How far in advance should I book SHYTECH for my event?",
     answer:
-      "We recommend booking at least 3–6 months in advance for large events like weddings and conferences, and 4–6 weeks for smaller corporate events. This ensures you get your preferred date and adequate time for thorough planning. For last-minute bookings, contact us and we'll do our best to accommodate.",
+      "We recommend booking at least 3–6 months in advance for large events like conferences and summits, and 4–6 weeks for smaller corporate events. This ensures you get your preferred date and adequate time for thorough planning. For last-minute bookings, contact us and we'll do our best to accommodate.",
     category: "Booking",
   },
   {
     id: "2",
     question: "What types of events does SHYTECH manage?",
     answer:
-      "SHYTECH handles the full spectrum — weddings, corporate events, product launches, conferences, award ceremonies, fashion shows, brand activations, and private celebrations. Whether it's 50 guests or 5,000, we bring the same level of premium execution to every event.",
+      "SHYTECH handles the full spectrum — corporate events, product launches, conferences, summits, award shows, brand activations, and influencer events. Whether it's 50 guests or 5,000, we bring the same level of premium execution to every event.",
     category: "Events",
   },
   {
@@ -57,10 +57,10 @@ export const faqs: FAQ[] = [
   },
   {
     id: "8",
-    question: "Is your pricing transparent? Are there hidden charges?",
+    question: "Is your proposal transparent? Are there hidden charges?",
     answer:
-      "100% transparent pricing. Every quote includes a detailed breakdown of all costs — no hidden charges, no surprise invoices. Any additions to the original scope are discussed and approved before proceeding. We believe long-term relationships are built on trust.",
-    category: "Pricing",
+      "100% transparent proposals. Every quote includes a detailed breakdown of all costs — no hidden charges, no surprise invoices. Any additions to the original scope are discussed and approved before proceeding. We believe long-term relationships are built on trust.",
+    category: "Proposals",
   },
   {
     id: "9",
@@ -73,7 +73,7 @@ export const faqs: FAQ[] = [
     id: "10",
     question: "Do you work outside your city / are you available for destination events?",
     answer:
-      "Yes. SHYTECH operates across India and internationally for destination weddings, global conferences, and brand events. Travel and accommodation for our team are included in the project quote. We've worked in Dubai, Singapore, London, and major Indian cities.",
+      "Yes. SHYTECH operates across India and internationally for global conferences, summits, and brand events. Travel and accommodation for our team are included in the project quote. We've worked in Dubai, Singapore, London, and major Indian cities.",
     category: "Events",
   },
 ];

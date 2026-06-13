@@ -11,7 +11,7 @@ export const revalidate = 60;
 
 export const metadata: Metadata = {
   title: "Events | SHYTECH",
-  description: "Explore SHYTECH's portfolio of corporate events, weddings, conferences, and brand activations.",
+  description: "Explore SHYTECH's portfolio of corporate events, conferences, summits, and brand activations.",
 };
 
 function formatDate(dateStr?: string) {
@@ -53,7 +53,7 @@ export default async function EventsPage() {
             Our <span className="accent-text">Events</span>
           </h1>
           <p className="text-lg text-[#475569] max-w-2xl mx-auto">
-            Discover the extraordinary events we&apos;ve crafted — from intimate weddings to massive corporate summits.
+            Discover the extraordinary events we&apos;ve crafted — from intimate brand activations to massive corporate summits.
           </p>
         </div>
       </section>

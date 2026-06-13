@@ -15,7 +15,7 @@ const openings = [
     location: "Mumbai, India",
     type: "Full-time",
     description:
-      "Lead end-to-end management of large-scale corporate events and luxury weddings. 5+ years of experience required.",
+      "Lead end-to-end management of large-scale corporate events and conferences. 5+ years of experience required.",
   },
   {
     title: "Lead Cinematographer",
@@ -42,12 +42,12 @@ const openings = [
       "Drive our clients' social media presence and brand campaigns. Strong knowledge of Meta, YouTube, and content strategy.",
   },
   {
-    title: "Wedding Coordinator",
+    title: "Event Production Coordinator",
     department: "Event Management",
     location: "Mumbai / Pan-India",
     type: "Full-time",
     description:
-      "Coordinate luxury weddings with meticulous attention to detail. Hindi and English fluency required.",
+      "Coordinate large-scale conferences and summits with meticulous attention to detail. Hindi and English fluency required.",
   },
   {
     title: "Video Editor (Reels & Social)",
@@ -60,7 +60,7 @@ const openings = [
 ];
 
 const perks = [
-  { icon: Zap, title: "Work on Marquee Events", desc: "From Bollywood weddings to global tech summits — no two days are the same." },
+  { icon: Zap, title: "Work on Marquee Events", desc: "From global tech summits to high-profile award shows — no two days are the same." },
   { icon: Users, title: "Collaborative Culture", desc: "A team that challenges and supports each other. No politics, no hierarchies." },
   { icon: Heart, title: "Competitive Compensation", desc: "Industry-leading salaries with performance bonuses on key projects." },
   { icon: Briefcase, title: "Skill Development", desc: "Access to premium tools, training programs, and industry conferences." },

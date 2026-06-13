@@ -48,11 +48,11 @@ export default function JsonLd() {
       name: "Event Management & Media Production Services",
       itemListElement: [
         { "@type": "Offer", itemOffered: { "@type": "Service", name: "Corporate Event Management" } },
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Wedding Planning" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Conference & Summit Production" } },
         { "@type": "Offer", itemOffered: { "@type": "Service", name: "Professional Videography" } },
         { "@type": "Offer", itemOffered: { "@type": "Service", name: "AI Video Generation" } },
         { "@type": "Offer", itemOffered: { "@type": "Service", name: "Live Streaming" } },
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Brand Promotions" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Brand Activations & Experiential Marketing" } },
       ],
     },
     aggregateRating: {

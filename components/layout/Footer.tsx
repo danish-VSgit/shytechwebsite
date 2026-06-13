@@ -5,21 +5,21 @@ const quickLinks = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about" },
   { label: "Services", href: "/services" },
+  { label: "Guests", href: "/guests" },
   { label: "Portfolio", href: "/portfolio" },
-  { label: "Pricing", href: "/pricing" },
   { label: "Blog", href: "/blog" },
   { label: "Careers", href: "/careers" },
   { label: "Contact", href: "/contact" },
 ];
 
 const services = [
-  { label: "Event Management", href: "/services#event-management" },
-  { label: "Wedding Planning", href: "/services#event-management" },
   { label: "Corporate Events", href: "/services#event-management" },
-  { label: "Videography", href: "/services#media-production" },
+  { label: "Conferences & Summits", href: "/services#event-management" },
+  { label: "Award Shows", href: "/services#event-management" },
+  { label: "Video Production", href: "/services#media-production" },
   { label: "AI Video Generation", href: "/services#post-production" },
   { label: "Live Streaming", href: "/services#media-production" },
-  { label: "Brand Promotions", href: "/services#brand-digital" },
+  { label: "Brand Activations", href: "/services#brand-digital" },
   { label: "Digital Marketing", href: "/services#brand-digital" },
 ];
 

@@ -1,4 +1,4 @@
-export type PortfolioCategory = "all" | "events" | "weddings" | "corporate" | "video" | "commercial";
+export type PortfolioCategory = "all" | "events" | "corporate" | "video" | "commercial";
 
 export interface PortfolioItem {
   id: string;
@@ -24,13 +24,13 @@ export const portfolioItems: PortfolioItem[] = [
   },
   {
     id: "2",
-    title: "The Sharma Wedding",
-    category: "weddings",
-    tags: ["Wedding Planning", "Videography", "Décor"],
-    description: "A three-day luxury wedding celebration with 800 guests, cinematic coverage, and bespoke décor.",
+    title: "Leadership Summit Mumbai",
+    category: "corporate",
+    tags: ["Conference Management", "Stage Production", "Live Streaming"],
+    description: "A two-day leadership summit for 800 attendees, featuring keynote production, breakout stages, and global livestream coverage.",
     image: "https://images.unsplash.com/photo-1519741497674-611481863552?w=800&q=80",
     year: "2024",
-    client: "Sharma Family",
+    client: "Apex Leadership Group",
   },
   {
     id: "3",
@@ -54,13 +54,13 @@ export const portfolioItems: PortfolioItem[] = [
   },
   {
     id: "5",
-    title: "Royal Wedding Reel",
+    title: "Brand Campaign Reel",
     category: "video",
     tags: ["Videography", "Video Editing", "Drone"],
-    description: "Award-winning 8-minute cinematic wedding film with drone footage, crafted for a luxury destination wedding.",
+    description: "Award-winning 90-second cinematic brand campaign film with drone footage, crafted for a premium product launch.",
     image: "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=800&q=80",
     year: "2024",
-    client: "Kapoor Family",
+    client: "LuxePerfume Co.",
   },
   {
     id: "6",
@@ -74,13 +74,13 @@ export const portfolioItems: PortfolioItem[] = [
   },
   {
     id: "7",
-    title: "Beachside Sangeet",
-    category: "weddings",
-    tags: ["Event Décor", "Entertainment", "Photography"],
-    description: "Magical beachside sangeet ceremony with 400 guests, LED setups, and live performances under the stars.",
+    title: "Influencer Brand Activation",
+    category: "events",
+    tags: ["Experiential Marketing", "Entertainment", "Photography"],
+    description: "A 400-guest influencer brand activation with immersive LED installations, live performances, and real-time content creation.",
     image: "https://images.unsplash.com/photo-1532117182044-031e7cd916ee?w=800&q=80",
     year: "2024",
-    client: "Mehta Family",
+    client: "BoldBrand Agency",
   },
   {
     id: "8",
@@ -107,7 +107,6 @@ export const portfolioItems: PortfolioItem[] = [
 export const portfolioCategories = [
   { id: "all", label: "All Work" },
   { id: "events", label: "Events" },
-  { id: "weddings", label: "Weddings" },
   { id: "corporate", label: "Corporate" },
   { id: "video", label: "Video Editing" },
   { id: "commercial", label: "Commercial" },

@@ -33,9 +33,9 @@ const benefits = [
   },
   {
     icon: DollarSign,
-    title: "Transparent Pricing",
+    title: "Transparent Proposals",
     description:
-      "No hidden costs. No surprise invoices. Every quote is itemized and every additional request is approved before action.",
+      "No hidden costs. No surprise invoices. Every proposal is itemized and every additional request is approved before action.",
   },
   {
     icon: UserCheck,

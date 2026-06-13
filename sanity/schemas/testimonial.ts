@@ -49,7 +49,7 @@ export const testimonial = defineType({
       options: {
         list: [
           { title: "Corporate Event", value: "corporate-event" },
-          { title: "Wedding", value: "wedding" },
+          { title: "Summit", value: "summit" },
           { title: "Product Launch", value: "product-launch" },
           { title: "Conference", value: "conference" },
           { title: "Brand Activation", value: "brand-activation" },

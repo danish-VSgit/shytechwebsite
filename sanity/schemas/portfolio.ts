@@ -27,7 +27,7 @@ export const portfolio = defineType({
       options: {
         list: [
           { title: "Events", value: "events" },
-          { title: "Weddings", value: "weddings" },
+          { title: "Award Shows", value: "award-shows" },
           { title: "Corporate", value: "corporate" },
           { title: "Video Production", value: "video" },
           { title: "Commercial", value: "commercial" },

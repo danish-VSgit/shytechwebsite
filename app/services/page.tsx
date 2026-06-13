@@ -1,17 +1,17 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Calendar, Camera, Film, Users, TrendingUp, Building2, Heart, Mic, Rocket, Video, Radio, Cpu, Share2, Zap, Mail, Crown, Star, Layers, Megaphone, BarChart2, Globe, FileText } from "lucide-react";
+import { ArrowRight, Calendar, Camera, Film, Users, TrendingUp, Building2, Trophy, Mic, Mic2, Rocket, Video, Radio, Cpu, Share2, Zap, Mail, Crown, Star, Layers, Megaphone, BarChart2, Globe, FileText } from "lucide-react";
 import SectionHeader from "@/components/shared/SectionHeader";
 import { serviceCategories } from "@/lib/data/services";
 
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Explore SHYTECH's full range of premium services — from event management and wedding planning to AI video generation, live streaming, and digital marketing.",
+    "Explore SHYTECH's full range of premium services — from corporate event management and conference production to AI video generation, live streaming, and digital marketing.",
 };
 
 const iconMap: Record<string, React.ElementType> = {
-  Calendar, Building2, Heart, Mic, Rocket, Camera, Video, Radio, Film,
+  Calendar, Building2, Trophy, Mic, Mic2, Rocket, Camera, Video, Radio, Film,
   Cpu, Share2, Zap, Mail, Crown, Star, Layers, Megaphone, BarChart2,
   Globe, FileText, Users, TrendingUp, Plane: Layers,
 };
