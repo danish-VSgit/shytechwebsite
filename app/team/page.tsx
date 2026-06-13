@@ -16,13 +16,27 @@ export const metadata: Metadata = {
 
 export default async function TeamPage() {
   let team: TeamMember[] = [];
+  let teamError: string | null = null;
+  let teamStatus: "fulfilled" | "rejected" | "skipped" = "skipped";
+
   if (isSanityConfigured) {
     try {
       team = await client.fetch<TeamMember[]>(teamQuery);
-    } catch {
+      teamStatus = "fulfilled";
+    } catch (err) {
+      teamStatus = "rejected";
+      teamError = String(err);
       team = [];
     }
   }
+
+  // TEMP DEBUG — remove after verifying Sanity team data flow
+  console.log("Sanity client config:", client.config());
+  console.log("Sanity team query:", teamQuery);
+  console.log("Team fetch status:", teamStatus);
+  console.log("Team error:", teamError);
+  console.log("Team documents:", team);
+  console.log("Team count:", team.length);
 
   const byDept = team.reduce<Record<string, TeamMember[]>>((acc, member) => {
     const dept = member.department ?? "Team";
@@ -50,6 +64,12 @@ export default async function TeamPage() {
 
   return (
     <main className="min-h-screen bg-white">
+      {/* TEMP DEBUG — remove after verifying Sanity team data flow */}
+      <div style={{ background: "#111", color: "#0f0", padding: "8px 16px", fontFamily: "monospace", fontSize: "12px", wordBreak: "break-all" }}>
+        DEBUG: projectId={client.config().projectId} dataset={client.config().dataset} useCdn={String(client.config().useCdn)} |
+        teamStatus={teamStatus} | teamCount={team.length} | teamError={teamError ?? "none"} |
+        teamDocuments={JSON.stringify(team.map((m) => ({ id: m._id, name: m.name, dept: m.department })))}
+      </div>
       {/* Hero */}
       <section className="pt-36 pb-16 bg-gradient-to-b from-[#f8fafc] to-white">
         <div className="container-width text-center">
