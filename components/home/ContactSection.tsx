@@ -2,9 +2,10 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Send, MessageCircle, Phone, Mail, CheckCircle2 } from "lucide-react";
+import { Send, MessageCircle, Phone, Mail, CheckCircle2, AlertCircle } from "lucide-react";
 import SectionHeader from "@/components/shared/SectionHeader";
 import { allServices } from "@/lib/data/services";
+import { validateInquiry, type ValidationErrors } from "@/lib/validation";
 
 const budgetOptions = [
   "Under ₹50,000",
@@ -18,6 +19,8 @@ const budgetOptions = [
 export default function ContactSection() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [fieldErrors, setFieldErrors] = useState<ValidationErrors>({});
+  const [submitError, setSubmitError] = useState<string | null>(null);
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -30,21 +33,43 @@ export default function ContactSection() {
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
   ) => {
-    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+    if (fieldErrors[name as keyof ValidationErrors]) {
+      setFieldErrors((prev) => ({ ...prev, [name]: undefined }));
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setSubmitError(null);
+
+    const { valid, errors } = validateInquiry(formData);
+    if (!valid) {
+      setFieldErrors(errors);
+      return;
+    }
+    setFieldErrors({});
+
     setIsSubmitting(true);
     try {
-      await fetch("/api/contact", {
+      const response = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
-      setIsSubmitted(true);
+      const result = await response.json().catch(() => null);
+
+      if (response.ok && result?.success) {
+        setIsSubmitted(true);
+      } else {
+        if (result?.fieldErrors) setFieldErrors(result.fieldErrors);
+        setSubmitError(
+          result?.error || "Something went wrong. Please try again or contact us directly."
+        );
+      }
     } catch {
-      setIsSubmitted(true);
+      setSubmitError("Network error. Please check your connection and try again.");
     } finally {
       setIsSubmitting(false);
     }
@@ -190,8 +215,18 @@ export default function ContactSection() {
                         onChange={handleChange}
                         placeholder={field.placeholder}
                         required={field.label.includes("*")}
-                        className="w-full px-4 py-3 rounded-xl bg-[#f8fafc] border border-[#E2E8F0] text-[#0f172a] placeholder-[#94a3b8] text-sm focus:outline-none focus:border-[#2563EB] focus:ring-3 focus:ring-[#2563EB]/10 focus:bg-white transition-all"
+                        aria-invalid={!!fieldErrors[field.name as keyof ValidationErrors]}
+                        className={`w-full px-4 py-3 rounded-xl bg-[#f8fafc] border text-[#0f172a] placeholder-[#94a3b8] text-sm focus:outline-none focus:ring-3 focus:bg-white transition-all ${
+                          fieldErrors[field.name as keyof ValidationErrors]
+                            ? "border-red-400 focus:border-red-400 focus:ring-red-400/10"
+                            : "border-[#E2E8F0] focus:border-[#2563EB] focus:ring-[#2563EB]/10"
+                        }`}
                       />
+                      {fieldErrors[field.name as keyof ValidationErrors] && (
+                        <p className="mt-1.5 text-xs text-red-500">
+                          {fieldErrors[field.name as keyof ValidationErrors]}
+                        </p>
+                      )}
                     </div>
                   ))}
                 </div>
@@ -206,7 +241,12 @@ export default function ContactSection() {
                       value={formData.eventType}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 rounded-xl border border-[#E2E8F0] bg-[#f8fafc] text-[#0f172a] text-sm focus:outline-none focus:border-[#2563EB] focus:ring-3 focus:ring-[#2563EB]/10 focus:bg-white transition-all appearance-none"
+                      aria-invalid={!!fieldErrors.eventType}
+                      className={`w-full px-4 py-3 rounded-xl bg-[#f8fafc] text-[#0f172a] text-sm focus:outline-none focus:ring-3 focus:bg-white transition-all appearance-none border ${
+                        fieldErrors.eventType
+                          ? "border-red-400 focus:border-red-400 focus:ring-red-400/10"
+                          : "border-[#E2E8F0] focus:border-[#2563EB] focus:ring-[#2563EB]/10"
+                      }`}
                     >
                       <option value="">Select service...</option>
                       {allServices.map((s) => (
@@ -215,6 +255,9 @@ export default function ContactSection() {
                         </option>
                       ))}
                     </select>
+                    {fieldErrors.eventType && (
+                      <p className="mt-1.5 text-xs text-red-500">{fieldErrors.eventType}</p>
+                    )}
                   </div>
 
                   <div>
@@ -247,9 +290,24 @@ export default function ContactSection() {
                     onChange={handleChange}
                     rows={4}
                     placeholder="Share your vision, event date, expected guests, and anything that'll help us understand your needs..."
-                    className="w-full px-4 py-3 rounded-xl border border-[#E2E8F0] bg-[#f8fafc] text-[#0f172a] placeholder-[#94a3b8] text-sm focus:outline-none focus:border-[#2563EB] focus:ring-3 focus:ring-[#2563EB]/10 focus:bg-white transition-all resize-none"
+                    aria-invalid={!!fieldErrors.message}
+                    className={`w-full px-4 py-3 rounded-xl bg-[#f8fafc] text-[#0f172a] placeholder-[#94a3b8] text-sm focus:outline-none focus:ring-3 focus:bg-white transition-all resize-none border ${
+                      fieldErrors.message
+                        ? "border-red-400 focus:border-red-400 focus:ring-red-400/10"
+                        : "border-[#E2E8F0] focus:border-[#2563EB] focus:ring-[#2563EB]/10"
+                    }`}
                   />
+                  {fieldErrors.message && (
+                    <p className="mt-1.5 text-xs text-red-500">{fieldErrors.message}</p>
+                  )}
                 </div>
+
+                {submitError && (
+                  <div className="flex items-start gap-3 px-4 py-3 rounded-xl bg-red-50 border border-red-200">
+                    <AlertCircle className="w-4 h-4 text-red-500 shrink-0 mt-0.5" />
+                    <p className="text-sm text-red-600">{submitError}</p>
+                  </div>
+                )}
 
                 <button
                   type="submit"
