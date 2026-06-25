@@ -7,8 +7,8 @@ const projectId = "gqvk6o1r";
 const dataset = "production";
 
 export default defineConfig({
-  name: "shytech-studio",
-  title: "SHYTECH Admin",
+  name: "queuecap-studio",
+  title: "QueueCap Admin",
   projectId,
   dataset,
   basePath: "/studio",
@@ -17,7 +17,7 @@ export default defineConfig({
     structureTool({
       structure: (S) =>
         S.list()
-          .title("SHYTECH Content")
+          .title("QueueCap Content")
           .items([
             S.listItem()
               .title("Events")

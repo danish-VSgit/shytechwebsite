@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Mail, Phone, ArrowRight } from "lucide-react";
+import Logo from "@/components/shared/Logo";
 
 const quickLinks = [
   { label: "Home", href: "/" },
@@ -59,10 +60,8 @@ export default function Footer() {
         {/* Brand */}
         <div className="lg:col-span-1">
           <Link href="/" className="flex items-center gap-2.5 mb-4">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#2563EB] to-[#06B6D4] flex items-center justify-center shadow-[0_4px_12px_rgba(37,99,235,0.3)]">
-              <span className="text-white font-bold text-lg" style={{ fontFamily: "var(--font-plus-jakarta)" }}>S</span>
-            </div>
-            <span className="text-xl font-bold tracking-widest text-[#0f172a]" style={{ fontFamily: "var(--font-plus-jakarta)" }}>SHYTECH</span>
+            <Logo size={40} />
+            <span className="text-xl font-bold tracking-widest text-[#0f172a]" style={{ fontFamily: "var(--font-plus-jakarta)" }}>QueueCap</span>
           </Link>
           <p className="text-[#475569] text-sm leading-relaxed">
             Premium event management and media production company creating
@@ -142,7 +141,7 @@ export default function Footer() {
       <div className="border-t border-[#E2E8F0]">
         <div className="container-width py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-[#94a3b8] text-xs">
-            © {new Date().getFullYear()} SHYTECH. All rights reserved.
+            © {new Date().getFullYear()} QueueCap. All rights reserved.
           </p>
           <div className="flex gap-6">
             <Link href="/sitemap.xml" className="text-xs text-[#94a3b8] hover:text-[#475569] transition-colors">

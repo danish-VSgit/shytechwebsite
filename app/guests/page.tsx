@@ -10,13 +10,13 @@ import GuestsGrid from "./GuestsGrid";
 export const revalidate = 60;
 
 export const metadata: Metadata = {
-  title: "Featured Guests & Speakers | SHYTECH",
+  title: "Featured Guests & Speakers | QueueCap",
   description:
-    "Meet the industry leaders, founders, creators, and influential voices who have appeared at SHYTECH events — corporate summits, conferences, and brand experiences.",
+    "Meet the industry leaders, founders, creators, and influential voices who have appeared at QueueCap events — corporate summits, conferences, and brand experiences.",
   openGraph: {
-    title: "Featured Guests & Speakers | SHYTECH",
+    title: "Featured Guests & Speakers | QueueCap",
     description:
-      "Meet the industry leaders, founders, creators, and influential voices who have appeared at SHYTECH events — corporate summits, conferences, and brand experiences.",
+      "Meet the industry leaders, founders, creators, and influential voices who have appeared at QueueCap events — corporate summits, conferences, and brand experiences.",
   },
 };
 
@@ -43,7 +43,7 @@ export default async function GuestsPage() {
             Featured <span className="accent-text">Guests & Speakers</span>
           </h1>
           <p className="text-xl text-[#475569] max-w-2xl mx-auto leading-relaxed">
-            Industry leaders, founders, creators, and influential voices who have brought their energy to SHYTECH stages and productions.
+            Industry leaders, founders, creators, and influential voices who have brought their energy to QueueCap stages and productions.
           </p>
         </div>
       </section>

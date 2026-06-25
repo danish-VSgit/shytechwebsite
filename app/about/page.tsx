@@ -8,7 +8,7 @@ import AnimatedCounter from "@/components/shared/AnimatedCounter";
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "Learn the story behind SHYTECH — a premium event management and media production company built on passion, precision, and world-class execution.",
+    "Learn the story behind QueueCap — a premium event management and media production company built on passion, precision, and world-class execution.",
 };
 
 const values = [
@@ -82,7 +82,7 @@ export default function AboutPage() {
             <span className="accent-text">We&apos;re Storytellers.</span>
           </h1>
           <p className="text-xl text-[#475569] max-w-2xl leading-relaxed">
-            SHYTECH was born from a simple belief: every event deserves to be experienced — not just attended. That belief has driven 500+ projects, 100+ satisfied clients, and 5+ years of relentless excellence.
+            QueueCap was born from a simple belief: every event deserves to be experienced — not just attended. That belief has driven 500+ projects, 100+ satisfied clients, and 5+ years of relentless excellence.
           </p>
         </div>
       </section>
@@ -117,7 +117,7 @@ export default function AboutPage() {
               centered={false}
             />
             <p className="text-[#475569] leading-relaxed mb-6">
-              We started SHYTECH because we saw a gap in the market: agencies that either had the creative vision but lacked execution, or the logistics but lacked artistry. We built a team that excels at both.
+              We started QueueCap because we saw a gap in the market: agencies that either had the creative vision but lacked execution, or the logistics but lacked artistry. We built a team that excels at both.
             </p>
             <p className="text-[#475569] leading-relaxed mb-8">
               Today, we manage everything from intimate 50-person gatherings to 5,000-attendee conferences — with the same obsessive attention to detail that has earned us a reputation as the premium choice for discerning clients.
@@ -130,7 +130,7 @@ export default function AboutPage() {
             <div className="relative rounded-2xl overflow-hidden shadow-[0_20px_60px_rgba(15,23,42,0.1)]">
               <Image
                 src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=80"
-                alt="SHYTECH event management in action"
+                alt="QueueCap event management in action"
                 width={800}
                 height={600}
                 className="object-cover w-full"
@@ -182,7 +182,7 @@ export default function AboutPage() {
             badge="The Team"
             title="The People Behind"
             titleHighlight="Every Success"
-            subtitle="A curated team of industry veterans who have elevated SHYTECH into a category of its own."
+            subtitle="A curated team of industry veterans who have elevated QueueCap into a category of its own."
           />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {team.map((member) => (
@@ -218,7 +218,7 @@ export default function AboutPage() {
             Ready to work with <span className="accent-text">the best?</span>
           </h2>
           <p className="text-[#475569] mb-8 max-w-xl mx-auto">
-            Let&apos;s discuss your next event and how SHYTECH can make it extraordinary.
+            Let&apos;s discuss your next event and how QueueCap can make it extraordinary.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contact" className="btn-primary inline-flex items-center gap-2">

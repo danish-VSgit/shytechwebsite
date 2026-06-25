@@ -64,7 +64,7 @@ export default function WhyChooseUs() {
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#2563EB]/20 bg-[#eff6ff] mb-6">
               <span className="w-1.5 h-1.5 rounded-full bg-[#2563EB]" />
               <span className="text-xs font-semibold tracking-widest uppercase text-[#2563EB]">
-                Why SHYTECH
+                Why QueueCap
               </span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-[#0f172a] leading-tight mb-6" style={{ fontFamily: "var(--font-plus-jakarta)" }}>

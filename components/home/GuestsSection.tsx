@@ -109,7 +109,7 @@ export default function GuestsSection({ guests }: Props) {
           badge="Featured Guests & Speakers"
           title="Featured"
           titleHighlight="Personalities"
-          subtitle="Meet the industry leaders, founders, creators, speakers and influential voices who have been part of SHYTECH events and productions."
+          subtitle="Meet the industry leaders, founders, creators, speakers and influential voices who have been part of QueueCap events and productions."
         />
       </div>
 

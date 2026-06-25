@@ -7,7 +7,7 @@ import { serviceCategories } from "@/lib/data/services";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Explore SHYTECH's full range of premium services — from corporate event management and conference production to AI video generation, live streaming, and digital marketing.",
+    "Explore QueueCap's full range of premium services — from corporate event management and conference production to AI video generation, live streaming, and digital marketing.",
 };
 
 const iconMap: Record<string, React.ElementType> = {

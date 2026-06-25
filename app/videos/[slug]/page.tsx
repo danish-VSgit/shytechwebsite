@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   } catch { return {}; }
   if (!video) return { title: "Video Not Found" };
   return {
-    title: video.seo?.metaTitle ?? `${video.title} | SHYTECH Videos`,
+    title: video.seo?.metaTitle ?? `${video.title} | QueueCap Videos`,
     description: video.seo?.metaDescription ?? video.description,
     openGraph: {
       title: video.seo?.metaTitle ?? video.title,

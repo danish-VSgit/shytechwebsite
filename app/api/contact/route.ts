@@ -13,7 +13,10 @@ interface InquiryBody {
 async function sendEmail(data: InquiryBody) {
   const { GMAIL_USER, GMAIL_APP_PASSWORD, CONTACT_EMAIL_TO } = process.env;
 
-  if (!GMAIL_USER || !GMAIL_APP_PASSWORD || !CONTACT_EMAIL_TO) return;
+  if (!GMAIL_USER || !GMAIL_APP_PASSWORD || !CONTACT_EMAIL_TO) {
+    console.warn("[Email] Skipped: GMAIL_USER, GMAIL_APP_PASSWORD, or CONTACT_EMAIL_TO is not set");
+    return;
+  }
 
   const transporter = nodemailer.createTransport({
     service: "gmail",
@@ -24,15 +27,24 @@ async function sendEmail(data: InquiryBody) {
   });
 
   await transporter.sendMail({
-    from: `"SHYTECH Contact Form" <${GMAIL_USER}>`,
+    from: `"QueueCap Contact Form" <${GMAIL_USER}>`,
     to: CONTACT_EMAIL_TO,
     replyTo: data.email,
     subject: `🎯 New Inquiry: ${data.eventType} — ${data.name}`,
     html: `
-      <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #0a0a0a; color: #ffffff; border-radius: 12px; overflow: hidden;">
-        <div style="background: linear-gradient(135deg, #D4AF37 0%, #F5E27D 50%, #D4AF37 100%); padding: 28px 32px;">
-          <h1 style="margin: 0; font-size: 22px; color: #000; letter-spacing: 2px;">SHYTECH</h1>
-          <p style="margin: 4px 0 0; font-size: 13px; color: #000; opacity: 0.7;">New Client Inquiry</p>
+      <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #ffffff; color: #0f172a; border-radius: 12px; overflow: hidden; border: 1px solid #e2e8f0;">
+        <div style="background: linear-gradient(135deg, #2563EB 0%, #3B82F6 100%); padding: 28px 32px;">
+          <table style="border-collapse: collapse;">
+            <tr>
+              <td style="vertical-align: middle; padding-right: 12px;">
+                <img src="https://queuecap.com/branding/queuecap-logo-email.png" alt="QueueCap" width="36" height="36" style="display: block; border-radius: 8px;" />
+              </td>
+              <td style="vertical-align: middle;">
+                <h1 style="margin: 0; font-size: 22px; color: #fff; letter-spacing: 2px;">QueueCap</h1>
+              </td>
+            </tr>
+          </table>
+          <p style="margin: 8px 0 0; font-size: 13px; color: #fff; opacity: 0.85;">New Client Inquiry</p>
         </div>
 
         <div style="padding: 32px;">
@@ -47,10 +59,10 @@ async function sendEmail(data: InquiryBody) {
               .map(
                 ([label, value]) => `
               <tr>
-                <td style="padding: 10px 0; color: #D4AF37; font-size: 12px; font-weight: bold; letter-spacing: 1px; text-transform: uppercase; width: 120px; vertical-align: top;">${label}</td>
-                <td style="padding: 10px 0; color: #ffffff; font-size: 15px; vertical-align: top;">${value}</td>
+                <td style="padding: 10px 0; color: #2563EB; font-size: 12px; font-weight: bold; letter-spacing: 1px; text-transform: uppercase; width: 120px; vertical-align: top;">${label}</td>
+                <td style="padding: 10px 0; color: #0f172a; font-size: 15px; vertical-align: top;">${value}</td>
               </tr>
-              <tr><td colspan="2" style="border-bottom: 1px solid #1a1a1a;"></td></tr>
+              <tr><td colspan="2" style="border-bottom: 1px solid #e2e8f0;"></td></tr>
             `
               )
               .join("")}
@@ -59,16 +71,16 @@ async function sendEmail(data: InquiryBody) {
           ${
             data.message
               ? `
-            <div style="margin-top: 20px; padding: 16px; background: #111; border-radius: 8px; border-left: 3px solid #D4AF37;">
-              <p style="margin: 0 0 8px; color: #D4AF37; font-size: 11px; font-weight: bold; letter-spacing: 1px; text-transform: uppercase;">Message</p>
-              <p style="margin: 0; color: #cccccc; font-size: 14px; line-height: 1.6;">${data.message}</p>
+            <div style="margin-top: 20px; padding: 16px; background: #eff6ff; border-radius: 8px; border-left: 3px solid #2563EB;">
+              <p style="margin: 0 0 8px; color: #2563EB; font-size: 11px; font-weight: bold; letter-spacing: 1px; text-transform: uppercase;">Message</p>
+              <p style="margin: 0; color: #334155; font-size: 14px; line-height: 1.6;">${data.message}</p>
             </div>
           `
               : ""
           }
 
-          <div style="margin-top: 28px; padding-top: 20px; border-top: 1px solid #1a1a1a; text-align: center;">
-            <a href="mailto:${data.email}" style="display: inline-block; padding: 12px 28px; background: linear-gradient(135deg, #D4AF37, #F5E27D); color: #000; font-weight: bold; text-decoration: none; border-radius: 50px; font-size: 13px; letter-spacing: 1px; margin-right: 10px;">
+          <div style="margin-top: 28px; padding-top: 20px; border-top: 1px solid #e2e8f0; text-align: center;">
+            <a href="mailto:${data.email}" style="display: inline-block; padding: 12px 28px; background: linear-gradient(135deg, #2563EB, #3B82F6); color: #fff; font-weight: bold; text-decoration: none; border-radius: 50px; font-size: 13px; letter-spacing: 1px; margin-right: 10px;">
               REPLY TO CLIENT
             </a>
             <a href="https://wa.me/${data.phone.replace(/\D/g, "")}" style="display: inline-block; padding: 12px 28px; background: #25D366; color: #fff; font-weight: bold; text-decoration: none; border-radius: 50px; font-size: 13px; letter-spacing: 1px;">
@@ -77,21 +89,26 @@ async function sendEmail(data: InquiryBody) {
           </div>
         </div>
 
-        <div style="padding: 16px 32px; background: #050505; text-align: center;">
-          <p style="margin: 0; color: #444; font-size: 11px;">SHYTECH — Received ${new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" })} IST</p>
+        <div style="padding: 16px 32px; background: #f8fafc; text-align: center;">
+          <p style="margin: 0; color: #64748b; font-size: 11px;">QueueCap — Received ${new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" })} IST</p>
         </div>
       </div>
     `,
   });
+
+  console.log("[Email] Sent successfully");
 }
 
 async function sendWhatsApp(data: InquiryBody) {
   const { CALLMEBOT_PHONE, CALLMEBOT_APIKEY } = process.env;
 
-  if (!CALLMEBOT_PHONE || !CALLMEBOT_APIKEY) return;
+  if (!CALLMEBOT_PHONE || !CALLMEBOT_APIKEY) {
+    console.warn("[WhatsApp] Skipped: CALLMEBOT_PHONE or CALLMEBOT_APIKEY is not set");
+    return;
+  }
 
   const text = encodeURIComponent(
-    `🎯 *New SHYTECH Inquiry*\n\n` +
+    `🎯 *New QueueCap Inquiry*\n\n` +
       `👤 *Name:* ${data.name}\n` +
       `📱 *Phone:* ${data.phone}\n` +
       `📧 *Email:* ${data.email}\n` +
@@ -100,9 +117,22 @@ async function sendWhatsApp(data: InquiryBody) {
       (data.message ? `\n💬 *Message:*\n${data.message}` : "")
   );
 
-  await fetch(
-    `https://api.callmebot.com/whatsapp.php?phone=${CALLMEBOT_PHONE}&text=${text}&apikey=${CALLMEBOT_APIKEY}`
-  );
+  const url = `https://api.callmebot.com/whatsapp.php?phone=${CALLMEBOT_PHONE}&text=${text}&apikey=${CALLMEBOT_APIKEY}`;
+  console.log("[WhatsApp] Request URL:", url.replace(CALLMEBOT_APIKEY, "***"));
+
+  const response = await fetch(url);
+  const responseBody = await response.text();
+
+  console.log("[WhatsApp] Response status:", response.status);
+  console.log("[WhatsApp] Response body:", responseBody);
+
+  // CallMeBot often returns HTTP 200 even when it fails (e.g. unregistered
+  // phone, bad API key, rate limit) — the failure only shows up in the body text.
+  if (!response.ok || /error/i.test(responseBody)) {
+    throw new Error(`[WhatsApp] CallMeBot request failed (status ${response.status}): ${responseBody}`);
+  }
+
+  console.log("[WhatsApp] Message sent successfully");
 }
 
 export async function POST(request: NextRequest) {
@@ -118,7 +148,18 @@ export async function POST(request: NextRequest) {
     }
 
     // Fire both notifications in parallel — don't let one failure block the other
-    await Promise.allSettled([sendEmail(body), sendWhatsApp(body)]);
+    const [emailResult, whatsappResult] = await Promise.allSettled([
+      sendEmail(body),
+      sendWhatsApp(body),
+    ]);
+
+    if (emailResult.status === "rejected") {
+      console.error("[Email] Failed to send:", emailResult.reason);
+    }
+
+    if (whatsappResult.status === "rejected") {
+      console.error("[WhatsApp] Failed to send:", whatsappResult.reason);
+    }
 
     return NextResponse.json(
       { success: true, message: "Inquiry received. We will contact you within 24 hours." },

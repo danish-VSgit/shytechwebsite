@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronDown, Phone } from "lucide-react";
+import Logo from "@/components/shared/Logo";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -55,13 +56,11 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2.5 group">
           <div className="relative">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#2563EB] to-[#06B6D4] flex items-center justify-center shadow-[0_4px_12px_rgba(37,99,235,0.3)]">
-              <span className="text-white font-bold text-lg" style={{ fontFamily: "var(--font-plus-jakarta)" }}>S</span>
-            </div>
-            <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-[#2563EB] to-[#06B6D4] blur-lg opacity-20 group-hover:opacity-40 transition-opacity" />
+            <Logo size={40} />
+            <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-[#2563EB] to-[#06B6D4] blur-lg opacity-20 group-hover:opacity-40 transition-opacity -z-10" />
           </div>
           <span className="text-xl font-bold tracking-widest text-[#0f172a] group-hover:text-[#2563EB] transition-colors" style={{ fontFamily: "var(--font-plus-jakarta)" }}>
-            SHYTECH
+            QueueCap
           </span>
         </Link>
 

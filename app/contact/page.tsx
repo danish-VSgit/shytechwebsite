@@ -4,7 +4,7 @@ import ContactSection from "@/components/home/ContactSection";
 export const metadata: Metadata = {
   title: "Contact Us",
   description:
-    "Get in touch with SHYTECH for your corporate event management, conference production, videography, or media production needs. Free consultation available.",
+    "Get in touch with QueueCap for your corporate event management, conference production, videography, or media production needs. Free consultation available.",
 };
 
 export default function ContactPage() {

@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!project) return { title: "Project Not Found" };
 
   return {
-    title: project.seo?.metaTitle ?? `${project.title} | SHYTECH Portfolio`,
+    title: project.seo?.metaTitle ?? `${project.title} | QueueCap Portfolio`,
     description: project.seo?.metaDescription ?? project.description,
     keywords: project.seo?.keywords,
     openGraph: {

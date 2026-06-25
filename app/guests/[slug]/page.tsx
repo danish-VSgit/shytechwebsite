@@ -66,9 +66,9 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const guest = await getGuestProfile(slug);
-  if (!guest) return { title: "Guest Not Found | SHYTECH" };
+  if (!guest) return { title: "Guest Not Found | QueueCap" };
 
-  const title = guest.seo?.metaTitle ?? `${guest.name} | Guest Profile | SHYTECH`;
+  const title = guest.seo?.metaTitle ?? `${guest.name} | Guest Profile | QueueCap`;
   const descriptionParts = [guest.bio, guest.title, guest.company].filter(Boolean);
   const description = guest.seo?.metaDescription ?? descriptionParts.join(" — ").slice(0, 160);
   const ogImage = guest.seo?.ogImage ? urlFor(guest.seo.ogImage).width(1200).height(630).url() : guest.image;
@@ -134,7 +134,7 @@ export default async function GuestProfilePage({ params }: Props) {
     social.instagram || social.linkedin || social.twitter || social.youtube || social.facebook || social.website
   );
 
-  const profileUrl = `https://shytech.agency/guests/${guest.slug}`;
+  const profileUrl = `https://queuecap.com/guests/${guest.slug}`;
   const sameAs = [social.instagram, social.linkedin, social.twitter, social.youtube, social.facebook, social.website].filter(
     (url): url is string => Boolean(url) && url !== "#"
   );

@@ -252,7 +252,7 @@ export default async function BlogPostPage({ params }: Props) {
         {/* CTA */}
         <div className="mt-16 mb-16 p-8 rounded-2xl bg-gradient-to-br from-[#2563EB] to-[#1d4ed8] text-center">
           <h2 className="text-2xl font-bold text-white mb-2" style={{ fontFamily: "var(--font-plus-jakarta)" }}>Ready to create something extraordinary?</h2>
-          <p className="text-white/80 mb-6">Let&apos;s talk about how SHYTECH can make your next event unforgettable.</p>
+          <p className="text-white/80 mb-6">Let&apos;s talk about how QueueCap can make your next event unforgettable.</p>
           <Link href="/contact" className="inline-flex items-center gap-2 bg-white text-[#2563EB] font-semibold px-6 py-3 rounded-xl hover:bg-[#f8fafc] transition-colors shadow-lg">
             Get in Touch
             <ArrowLeft className="w-4 h-4 rotate-180" />

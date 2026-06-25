@@ -29,7 +29,7 @@ export default function TestimonialsSection({ testimonials = hardcodedTestimonia
           badge="Client Stories"
           title="Trusted by"
           titleHighlight="Industry Leaders"
-          subtitle="Don't take our word for it. Here's what our clients say after working with SHYTECH."
+          subtitle="Don't take our word for it. Here's what our clients say after working with QueueCap."
         />
 
         {/* Main testimonial */}

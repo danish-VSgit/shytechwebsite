@@ -21,11 +21,11 @@ const plusJakarta = Plus_Jakarta_Sans({
 
 export const metadata: Metadata = {
   title: {
-    default: "SHYTECH | Premium Event Management & Media Production",
-    template: "%s | SHYTECH",
+    default: "QueueCap | Premium Event Management & Media Production",
+    template: "%s | QueueCap",
   },
   description:
-    "SHYTECH delivers world-class corporate event management, conferences, summits, professional videography, AI video generation, and media production services. Creating experiences people never forget.",
+    "QueueCap delivers world-class corporate event management, conferences, summits, professional videography, AI video generation, and media production services. Creating experiences people never forget.",
   keywords: [
     "corporate event management",
     "event production company",
@@ -36,16 +36,16 @@ export const metadata: Metadata = {
     "corporate video production",
     "brand experience agency",
     "live event production",
-    "SHYTECH",
+    "QueueCap",
   ],
-  authors: [{ name: "SHYTECH" }],
-  creator: "SHYTECH",
+  authors: [{ name: "QueueCap" }],
+  creator: "QueueCap",
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://shytech.agency",
-    siteName: "SHYTECH",
-    title: "SHYTECH | Premium Event Management & Media Production",
+    url: "https://queuecap.com",
+    siteName: "QueueCap",
+    title: "QueueCap | Premium Event Management & Media Production",
     description:
       "Creating experiences people never forget. From corporate events and conferences to professional videography and AI content production.",
     images: [
@@ -53,17 +53,17 @@ export const metadata: Metadata = {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "SHYTECH - Premium Event Management & Media Production",
+        alt: "QueueCap - Premium Event Management & Media Production",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "SHYTECH | Premium Event Management & Media Production",
+    title: "QueueCap | Premium Event Management & Media Production",
     description:
       "Creating experiences people never forget. From corporate events to professional media production.",
     images: ["/og-image.jpg"],
-    creator: "@shytech",
+    creator: "@queuecap",
   },
   robots: {
     index: true,
@@ -76,7 +76,7 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  metadataBase: new URL("https://shytech.agency"),
+  metadataBase: new URL("https://queuecap.com"),
 };
 
 export default function RootLayout({

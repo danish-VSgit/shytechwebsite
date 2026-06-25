@@ -12,9 +12,9 @@ import PortfolioGrid from "./PortfolioGrid";
 export const revalidate = 60;
 
 export const metadata: Metadata = {
-  title: "Portfolio | SHYTECH",
+  title: "Portfolio | QueueCap",
   description:
-    "Explore SHYTECH's portfolio of premium corporate events, conferences, summits, media productions, and brand campaigns.",
+    "Explore QueueCap's portfolio of premium corporate events, conferences, summits, media productions, and brand campaigns.",
 };
 
 export default async function PortfolioPage() {

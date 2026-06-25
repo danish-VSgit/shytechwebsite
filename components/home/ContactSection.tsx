@@ -102,7 +102,7 @@ export default function ContactSection() {
             </div>
 
             <a
-              href="https://wa.me/918595827471?text=Hi%20SHYTECH!%20I%27d%20like%20to%20discuss%20my%20event."
+              href="https://wa.me/918595827471?text=Hi%20QueueCap!%20I%27d%20like%20to%20discuss%20my%20event."
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-3 w-full py-4 rounded-2xl bg-[#25D366] text-white font-semibold text-sm hover:bg-[#20bd5c] transition-all shadow-[0_4px_20px_rgba(37,211,102,0.25)] hover:shadow-[0_6px_24px_rgba(37,211,102,0.35)] hover:-translate-y-0.5"

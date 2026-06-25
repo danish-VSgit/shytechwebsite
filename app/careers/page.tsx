@@ -5,7 +5,7 @@ import { ArrowRight, MapPin, Clock, Briefcase, Users, Zap, Heart } from "lucide-
 export const metadata: Metadata = {
   title: "Careers",
   description:
-    "Join the SHYTECH team. We're looking for talented event managers, cinematographers, editors, and digital strategists to create extraordinary experiences.",
+    "Join the QueueCap team. We're looking for talented event managers, cinematographers, editors, and digital strategists to create extraordinary experiences.",
 };
 
 const openings = [
@@ -80,7 +80,7 @@ export default function CareersPage() {
             Build a Career That <span className="accent-text">Means Something</span>
           </h1>
           <p className="text-xl text-[#475569] max-w-2xl leading-relaxed">
-            At SHYTECH, you don&apos;t just manage events — you create memories that will be talked about for years. Join a team that sets the standard.
+            At QueueCap, you don&apos;t just manage events — you create memories that will be talked about for years. Join a team that sets the standard.
           </p>
         </div>
       </section>
@@ -152,7 +152,7 @@ export default function CareersPage() {
                   </div>
                 </div>
                 <Link
-                  href={`mailto:careers@shytech.agency?subject=Application: ${role.title}`}
+                  href={`mailto:enquiry@queuecap.com?subject=Application: ${role.title}`}
                   className="shrink-0 btn-primary text-sm flex items-center gap-2"
                 >
                   Apply Now <ArrowRight className="w-4 h-4" />
@@ -170,10 +170,10 @@ export default function CareersPage() {
             Don&apos;t see your role? <span className="accent-text">Reach out anyway.</span>
           </h2>
           <p className="text-[#475569] mb-8 max-w-xl mx-auto">
-            We&apos;re always looking for exceptional talent. Send us your portfolio and tell us why you belong at SHYTECH.
+            We&apos;re always looking for exceptional talent. Send us your portfolio and tell us why you belong at QueueCap.
           </p>
           <a
-            href="mailto:careers@shytech.agency?subject=Open Application - SHYTECH"
+            href="mailto:enquiry@queuecap.com?subject=Open Application - QueueCap"
             className="btn-primary inline-flex items-center gap-2"
           >
             Send Open Application <ArrowRight className="w-4 h-4" />

@@ -2,11 +2,11 @@ export default function JsonLd() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    name: "SHYTECH",
+    name: "QueueCap",
     description:
       "Premium event management and media production company creating experiences people never forget.",
-    url: "https://shytech.agency",
-    logo: "https://shytech.agency/logo.png",
+    url: "https://queuecap.com",
+    logo: "https://queuecap.com/branding/queuecap-logo-512.png",
     telephone: "+918595827471",
     email: "enquiry@queuecap.com",
     openingHoursSpecification: [

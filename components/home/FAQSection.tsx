@@ -18,7 +18,7 @@ export default function FAQSection() {
           badge="FAQ"
           title="Common"
           titleHighlight="Questions"
-          subtitle="Everything you need to know before working with SHYTECH."
+          subtitle="Everything you need to know before working with QueueCap."
         />
 
         <div className="max-w-3xl mx-auto space-y-3">

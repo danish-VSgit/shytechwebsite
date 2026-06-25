@@ -10,8 +10,8 @@ import { Globe, Mail, ArrowRight, ExternalLink } from "lucide-react";
 export const revalidate = 60;
 
 export const metadata: Metadata = {
-  title: "Our Team | SHYTECH",
-  description: "Meet the talented team behind SHYTECH — event management experts, cinematographers, and creative professionals.",
+  title: "Our Team | QueueCap",
+  description: "Meet the talented team behind QueueCap — event management experts, cinematographers, and creative professionals.",
 };
 
 export default async function TeamPage() {

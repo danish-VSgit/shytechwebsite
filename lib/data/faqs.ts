@@ -8,16 +8,16 @@ export interface FAQ {
 export const faqs: FAQ[] = [
   {
     id: "1",
-    question: "How far in advance should I book SHYTECH for my event?",
+    question: "How far in advance should I book QueueCap for my event?",
     answer:
       "We recommend booking at least 3–6 months in advance for large events like conferences and summits, and 4–6 weeks for smaller corporate events. This ensures you get your preferred date and adequate time for thorough planning. For last-minute bookings, contact us and we'll do our best to accommodate.",
     category: "Booking",
   },
   {
     id: "2",
-    question: "What types of events does SHYTECH manage?",
+    question: "What types of events does QueueCap manage?",
     answer:
-      "SHYTECH handles the full spectrum — corporate events, product launches, conferences, summits, award shows, brand activations, and influencer events. Whether it's 50 guests or 5,000, we bring the same level of premium execution to every event.",
+      "QueueCap handles the full spectrum — corporate events, product launches, conferences, summits, award shows, brand activations, and influencer events. Whether it's 50 guests or 5,000, we bring the same level of premium execution to every event.",
     category: "Events",
   },
   {
@@ -73,7 +73,7 @@ export const faqs: FAQ[] = [
     id: "10",
     question: "Do you work outside your city / are you available for destination events?",
     answer:
-      "Yes. SHYTECH operates across India and internationally for global conferences, summits, and brand events. Travel and accommodation for our team are included in the project quote. We've worked in Dubai, Singapore, London, and major Indian cities.",
+      "Yes. QueueCap operates across India and internationally for global conferences, summits, and brand events. Travel and accommodation for our team are included in the project quote. We've worked in Dubai, Singapore, London, and major Indian cities.",
     category: "Events",
   },
 ];

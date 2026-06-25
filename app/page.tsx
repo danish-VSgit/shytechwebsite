@@ -26,9 +26,9 @@ import type { Guest, Testimonial, Portfolio, Service, GalleryImage } from "@/san
 export const revalidate = 60; // ISR: revalidate every 60 seconds
 
 export const metadata: Metadata = {
-  title: "SHYTECH | Premium Event Management & Media Production",
+  title: "QueueCap | Premium Event Management & Media Production",
   description:
-    "SHYTECH delivers world-class corporate event management, conferences, summits, professional videography, AI video generation, and media production. Creating experiences people never forget.",
+    "QueueCap delivers world-class corporate event management, conferences, summits, professional videography, AI video generation, and media production. Creating experiences people never forget.",
 };
 
 async function fetchSanityData() {

@@ -10,9 +10,9 @@ import type { Blog } from "@/sanity/lib/types";
 export const revalidate = 60;
 
 export const metadata: Metadata = {
-  title: "Blog | SHYTECH",
+  title: "Blog | QueueCap",
   description:
-    "Expert insights on corporate event management, conference production, videography trends, AI in media production, and digital marketing from the SHYTECH team.",
+    "Expert insights on corporate event management, conference production, videography trends, AI in media production, and digital marketing from the QueueCap team.",
 };
 
 // Static fallback posts shown before Sanity is populated
@@ -284,7 +284,7 @@ export default async function BlogPage() {
             <span className="text-xs font-semibold tracking-widest uppercase text-[#2563EB]">Insights & Ideas</span>
           </div>
           <h1 className="text-5xl md:text-7xl font-bold text-[#0f172a] mb-6" style={{ fontFamily: "var(--font-plus-jakarta)" }}>
-            The SHYTECH <span className="accent-text">Journal</span>
+            The QueueCap <span className="accent-text">Journal</span>
           </h1>
           <p className="text-xl text-[#475569] max-w-2xl mx-auto leading-relaxed">
             Expert perspectives on events, media, trends, and the future of experiential storytelling.

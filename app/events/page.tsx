@@ -10,8 +10,8 @@ import { Calendar, MapPin, Users, ArrowRight } from "lucide-react";
 export const revalidate = 60;
 
 export const metadata: Metadata = {
-  title: "Events | SHYTECH",
-  description: "Explore SHYTECH's portfolio of corporate events, conferences, summits, and brand activations.",
+  title: "Events | QueueCap",
+  description: "Explore QueueCap's portfolio of corporate events, conferences, summits, and brand activations.",
 };
 
 function formatDate(dateStr?: string) {
@@ -99,7 +99,7 @@ export default async function EventsPage() {
       <section className="container-width mb-20">
         <div className="rounded-2xl bg-gradient-to-br from-[#2563EB] to-[#1d4ed8] p-10 text-center">
           <h2 className="text-2xl font-bold text-white mb-2" style={{ fontFamily: "var(--font-plus-jakarta)" }}>Planning an event?</h2>
-          <p className="text-white/80 mb-6">Let SHYTECH turn your vision into an unforgettable experience.</p>
+          <p className="text-white/80 mb-6">Let QueueCap turn your vision into an unforgettable experience.</p>
           <Link href="/contact" className="inline-flex items-center gap-2 bg-white text-[#2563EB] font-semibold px-6 py-3 rounded-xl hover:bg-[#f8fafc] transition-colors shadow-lg">
             Get a Free Consultation <ArrowRight className="w-4 h-4" />
           </Link>

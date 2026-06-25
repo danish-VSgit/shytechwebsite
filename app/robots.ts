@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: ["/api/"],
     },
-    sitemap: "https://shytech.agency/sitemap.xml",
+    sitemap: "https://queuecap.com/sitemap.xml",
   };
 }
