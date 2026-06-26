@@ -29,6 +29,7 @@ export const metadata: Metadata = {
   title: "QueueCap | Premium Event Management & Media Production",
   description:
     "QueueCap delivers world-class corporate event management, conferences, summits, professional videography, AI video generation, and media production. Creating experiences people never forget.",
+  alternates: { canonical: "/" },
 };
 
 async function fetchSanityData() {

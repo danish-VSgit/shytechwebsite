@@ -12,6 +12,7 @@ export const revalidate = 60;
 export const metadata: Metadata = {
   title: "Our Team | QueueCap",
   description: "Meet the talented team behind QueueCap — event management experts, cinematographers, and creative professionals.",
+  alternates: { canonical: "/team" },
 };
 
 export default async function TeamPage() {

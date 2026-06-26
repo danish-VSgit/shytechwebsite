@@ -12,6 +12,7 @@ export const revalidate = 60;
 export const metadata: Metadata = {
   title: "Events | QueueCap",
   description: "Explore QueueCap's portfolio of corporate events, conferences, summits, and brand activations.",
+  alternates: { canonical: "/events" },
 };
 
 function formatDate(dateStr?: string) {

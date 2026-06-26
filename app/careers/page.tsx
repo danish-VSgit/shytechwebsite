@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "Careers",
   description:
     "Join the QueueCap team. We're looking for talented event managers, cinematographers, editors, and digital strategists to create extraordinary experiences.",
+  alternates: { canonical: "/careers" },
 };
 
 const openings = [

@@ -18,6 +18,7 @@ export const metadata: Metadata = {
     description:
       "Meet the industry leaders, founders, creators, and influential voices who have appeared at QueueCap events — corporate summits, conferences, and brand experiences.",
   },
+  alternates: { canonical: "/guests" },
 };
 
 export default async function GuestsPage() {

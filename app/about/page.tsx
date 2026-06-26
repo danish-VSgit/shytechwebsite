@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: "About Us",
   description:
     "Learn the story behind QueueCap — a premium event management and media production company built on passion, precision, and world-class execution.",
+  alternates: { canonical: "/about" },
 };
 
 const values = [

@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Contact Us",
   description:
     "Get in touch with QueueCap for your corporate event management, conference production, videography, or media production needs. Free consultation available.",
+  alternates: { canonical: "/contact" },
 };
 
 export default function ContactPage() {

@@ -30,6 +30,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: event.seo?.metaDescription ?? event.description ?? "",
       images: event.coverImage ? [urlFor(event.coverImage).width(1200).height(630).url()] : [],
     },
+    alternates: { canonical: `/events/${slug}` },
     robots: event.seo?.noIndex ? { index: false, follow: false } : undefined,
   };
 }

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
@@ -40,6 +40,11 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "QueueCap" }],
   creator: "QueueCap",
+  publisher: "QueueCap",
+  applicationName: "QueueCap",
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -77,6 +82,11 @@ export const metadata: Metadata = {
     },
   },
   metadataBase: new URL("https://queuecap.com"),
+};
+
+export const viewport: Viewport = {
+  themeColor: "#2563EB",
+  colorScheme: "light",
 };
 
 export default function RootLayout({

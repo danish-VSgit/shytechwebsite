@@ -82,6 +82,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description,
       images: ogImage ? [ogImage] : [],
     },
+    alternates: { canonical: `/guests/${slug}` },
     robots: guest.seo?.noIndex ? { index: false, follow: false } : undefined,
   };
 }

@@ -39,6 +39,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         ? [urlFor(post.coverImage).width(1200).height(630).url()]
         : [],
     },
+    alternates: { canonical: `/blog/${slug}` },
     robots: post.seo?.noIndex ? { index: false, follow: false } : undefined,
   };
 }

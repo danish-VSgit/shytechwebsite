@@ -12,6 +12,7 @@ export const revalidate = 60;
 export const metadata: Metadata = {
   title: "Videos | QueueCap",
   description: "Watch our portfolio of event films, conference highlights, corporate productions, and AI-generated content.",
+  alternates: { canonical: "/videos" },
 };
 
 function getEmbedUrl(url: string): string | null {

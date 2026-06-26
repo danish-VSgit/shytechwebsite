@@ -39,6 +39,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         ? [urlFor(project.coverImage).width(1200).height(630).url()]
         : [],
     },
+    alternates: { canonical: `/portfolio/${slug}` },
     robots: project.seo?.noIndex ? { index: false, follow: false } : undefined,
   };
 }

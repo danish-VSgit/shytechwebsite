@@ -13,6 +13,7 @@ export const metadata: Metadata = {
   title: "Blog | QueueCap",
   description:
     "Expert insights on corporate event management, conference production, videography trends, AI in media production, and digital marketing from the QueueCap team.",
+  alternates: { canonical: "/blog" },
 };
 
 // Static fallback posts shown before Sanity is populated

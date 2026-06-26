@@ -30,6 +30,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: video.seo?.metaDescription ?? video.description ?? "",
       images: video.thumbnail ? [urlFor(video.thumbnail).width(1200).height(630).url()] : [],
     },
+    alternates: { canonical: `/videos/${slug}` },
     robots: video.seo?.noIndex ? { index: false, follow: false } : undefined,
   };
 }

@@ -15,6 +15,7 @@ export const metadata: Metadata = {
   title: "Portfolio | QueueCap",
   description:
     "Explore QueueCap's portfolio of premium corporate events, conferences, summits, media productions, and brand campaigns.",
+  alternates: { canonical: "/portfolio" },
 };
 
 export default async function PortfolioPage() {
