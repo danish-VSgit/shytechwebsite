@@ -35,17 +35,7 @@ export const guest = defineType({
       name: "category",
       title: "Category",
       type: "string",
-      options: {
-        list: [
-          { title: "Entrepreneur", value: "entrepreneur" },
-          { title: "Celebrity", value: "celebrity" },
-          { title: "Speaker", value: "speaker" },
-          { title: "Influencer", value: "influencer" },
-          { title: "Politician", value: "politician" },
-          { title: "Sports Person", value: "sports" },
-          { title: "Other", value: "other" },
-        ],
-      },
+      description: "Free text — type any category, e.g. Entrepreneur, Journalist, IAS Officer, Tech Founder",
     }),
     defineField({
       name: "photo",
