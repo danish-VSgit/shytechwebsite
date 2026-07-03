@@ -6,6 +6,7 @@ import PortfolioSection from "@/components/home/PortfolioSection";
 import TestimonialsSection from "@/components/home/TestimonialsSection";
 import GallerySection from "@/components/home/GallerySection";
 import ContactSection from "@/components/home/ContactSection";
+import StatsSection from "@/components/home/StatsSection";
 import { client } from "@/sanity/lib/client";
 import {
   featuredGuestsQuery,
@@ -65,8 +66,9 @@ export default async function HomePage() {
 
   return (
     <>
-      <HeroSection />
       <GuestsSection guests={guests} />
+      <HeroSection />
+      <StatsSection />
       <ServicesSection serviceCategories={serviceCategories} />
       <PortfolioSection portfolioItems={portfolio} />
       <TestimonialsSection testimonials={testimonials} />

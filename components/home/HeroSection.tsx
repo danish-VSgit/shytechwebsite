@@ -3,13 +3,6 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, Play, ChevronDown } from "lucide-react";
-import AnimatedCounter from "@/components/shared/AnimatedCounter";
-
-const stats = [
-  { value: 500, suffix: "+", label: "Projects Delivered" },
-  { value: 100, suffix: "+", label: "Happy Clients" },
-  { value: 5, suffix: "+", label: "Years Experience" },
-];
 
 export default function HeroSection() {
   return (
@@ -81,9 +74,9 @@ export default function HeroSection() {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="mt-8 text-lg md:text-xl text-[#475569] max-w-2xl mx-auto leading-relaxed"
         >
-          From corporate events, conferences and summits to professional media
-          production and AI-powered content creation, we craft brand
-          experiences and leadership events with uncompromising excellence.
+          QueueCap delivers premium event management, celebrity management,
+          speaker booking, conferences, summits, media production, podcast
+          production, AI content creation, and brand experiences across India.
         </motion.p>
 
         <motion.div
@@ -103,27 +96,6 @@ export default function HeroSection() {
         </motion.div>
 
         {/* Stats */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.7 }}
-          className="mt-20 flex flex-wrap items-center justify-center gap-8 md:gap-16"
-        >
-          {stats.map((stat, i) => (
-            <div key={stat.label} className="text-center group">
-              <div className="text-4xl md:text-5xl font-bold accent-text" style={{ fontFamily: "var(--font-plus-jakarta)" }}>
-                <AnimatedCounter
-                  end={stat.value}
-                  suffix={stat.suffix}
-                  duration={2500}
-                />
-              </div>
-              <div className="text-sm text-[#64748b] mt-1 tracking-wide">{stat.label}</div>
-              <div className="mt-2 h-px w-8 bg-[#2563EB]/25 mx-auto group-hover:w-16 transition-all duration-500" />
-            </div>
-          ))}
-        </motion.div>
-
         {/* Scroll indicator */}
         <motion.div
           initial={{ opacity: 0 }}

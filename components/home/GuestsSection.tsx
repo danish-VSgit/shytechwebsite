@@ -107,9 +107,9 @@ export default function GuestsSection({ guests }: Props) {
       <div className="container-width">
         <SectionHeader
           badge="Featured Guests & Speakers"
-          title="Featured"
-          titleHighlight="Personalities"
-          subtitle="Meet the industry leaders, founders, creators, speakers and influential voices who have been part of QueueCap events and productions."
+          title="Featured Guests &"
+          titleHighlight="Industry Leaders"
+          subtitle="Meet renowned business leaders, entrepreneurs, journalists, celebrities, creators, speakers, and influential personalities who have collaborated with QueueCap."
         />
       </div>
 
@@ -142,16 +142,36 @@ export default function GuestsSection({ guests }: Props) {
         </div>
       </div>
 
-      {/* ── View all CTA ── */}
-      <div className="container-width mt-12 flex flex-col items-center text-center gap-3">
-        <p className="text-sm text-[#94a3b8] flex items-center gap-1.5">
-          <Users className="w-3.5 h-3.5" />
-          Click any card to view their full profile
-        </p>
-        <Link href="/guests" className="btn-primary inline-flex items-center gap-2">
-          View All Personalities
-          <ArrowRight className="w-4 h-4" />
-        </Link>
+      {/* ── Bottom CTA ── */}
+      <div className="container-width mt-16">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="rounded-2xl border border-[#E2E8F0] bg-[#eff6ff]/60 px-8 py-10 text-center"
+        >
+          <h3
+            className="text-2xl md:text-3xl font-bold text-[#0f172a] leading-snug"
+            style={{ fontFamily: "var(--font-plus-jakarta)" }}
+          >
+            Looking for the perfect guest for your next event?
+          </h3>
+          <p className="mt-3 text-[#475569] max-w-xl mx-auto leading-relaxed">
+            QueueCap connects brands, conferences, universities, and organizations
+            with influential personalities from across industries.
+          </p>
+          <div className="mt-7 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Link href="/contact" className="btn-primary inline-flex items-center gap-2">
+              Invite a Guest
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+            <Link href="/guests" className="btn-secondary inline-flex items-center gap-2">
+              <Users className="w-4 h-4" />
+              View All Guests
+            </Link>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
