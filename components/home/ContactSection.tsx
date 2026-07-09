@@ -103,8 +103,8 @@ export default function ContactSection() {
                   {
                     icon: Mail,
                     label: "Email Us",
-                    value: "enquiry@queuecap.com",
-                    href: "mailto:enquiry@queuecap.com",
+                    value: "queuecap@gmail.com",
+                    href: "mailto:queuecap@gmail.com",
                   },
                 ].map(({ icon: Icon, label, value, href }) => (
                   <a

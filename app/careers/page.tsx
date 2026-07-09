@@ -153,7 +153,7 @@ export default function CareersPage() {
                   </div>
                 </div>
                 <Link
-                  href={`mailto:enquiry@queuecap.com?subject=Application: ${role.title}`}
+                  href={`mailto:queuecap@gmail.com?subject=Application: ${role.title}`}
                   className="shrink-0 btn-primary text-sm flex items-center gap-2"
                 >
                   Apply Now <ArrowRight className="w-4 h-4" />
@@ -174,7 +174,7 @@ export default function CareersPage() {
             We&apos;re always looking for exceptional talent. Send us your portfolio and tell us why you belong at QueueCap.
           </p>
           <a
-            href="mailto:enquiry@queuecap.com?subject=Open Application - QueueCap"
+            href="mailto:queuecap@gmail.com?subject=Open Application - QueueCap"
             className="btn-primary inline-flex items-center gap-2"
           >
             Send Open Application <ArrowRight className="w-4 h-4" />
