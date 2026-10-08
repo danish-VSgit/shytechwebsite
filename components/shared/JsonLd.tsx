@@ -18,7 +18,7 @@ export default function JsonLd() {
         description:
           "Premium event management and media production company creating experiences people never forget.",
         telephone: "+918595827471",
-        email: "queuecap@gmail.com",
+        email: "enquiry@queuecap.com",
         sameAs: [
           "https://www.instagram.com/queuecap/",
           "https://www.youtube.com/@queuecap",
@@ -34,7 +34,7 @@ export default function JsonLd() {
         image: "https://queuecap.com/logo.png",
         logo: "https://queuecap.com/logo.png",
         telephone: "+918595827471",
-        email: "queuecap@gmail.com",
+        email: "enquiry@queuecap.com",
         openingHoursSpecification: [
           {
             "@type": "OpeningHoursSpecification",

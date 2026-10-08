@@ -126,11 +126,11 @@ export default function Footer() {
             </li>
             <li>
               <a
-                href="mailto:queuecap@gmail.com"
+                href="mailto:enquiry@queuecap.com"
                 className="flex items-start gap-3 text-[#475569] hover:text-[#0f172a] transition-colors"
               >
                 <Mail className="w-4 h-4 mt-0.5 text-[#2563EB] shrink-0" />
-                <span className="text-sm">queuecap@gmail.com</span>
+                <span className="text-sm">enquiry@queuecap.com</span>
               </a>
             </li>
           </ul>
