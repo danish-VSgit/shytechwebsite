@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
 import { client, isSanityConfigured } from "@/sanity/lib/client";
 import { teamQuery } from "@/sanity/lib/queries";
 import { urlFor } from "@/sanity/lib/image";
 import type { TeamMember } from "@/sanity/lib/types";
-import { Globe, Mail, ArrowRight, ExternalLink } from "lucide-react";
+import { Globe, Mail, ExternalLink } from "lucide-react";
 
 export const revalidate = 60;
 
@@ -128,16 +127,6 @@ export default async function TeamPage() {
         )}
       </div>
 
-      {/* Join CTA */}
-      <section className="container-width mb-20">
-        <div className="rounded-2xl bg-gradient-to-br from-[#2563EB] to-[#1d4ed8] p-10 text-center">
-          <h2 className="text-2xl font-bold text-white mb-2" style={{ fontFamily: "var(--font-plus-jakarta)" }}>Want to join our team?</h2>
-          <p className="text-white/80 mb-6">We&apos;re always looking for talented creatives and event professionals.</p>
-          <Link href="/careers" className="inline-flex items-center gap-2 bg-white text-[#2563EB] font-semibold px-6 py-3 rounded-xl hover:bg-[#f8fafc] transition-colors shadow-lg">
-            View Open Positions <ArrowRight className="w-4 h-4" />
-          </Link>
-        </div>
-      </section>
     </main>
   );
 }
